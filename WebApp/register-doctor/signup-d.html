@@ -33,8 +33,8 @@
 	<input type="text" id="doctorTypes" ng-model="doctorType" placeholder="Type">
 	<br><br>
 
-	Clinic <select ng-model="clinics">
-		<option ng-repeat="clinic in clinics">{{ clinic }}</option>
+	Clinic <select id = "clinicSelection">
+		<option ng-model="clinic" ng-repeat="clinic in clinics">{{ clinic }}</option>
 	</select>
 
 	<br><br>

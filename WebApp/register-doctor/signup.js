@@ -5,33 +5,33 @@ app.factory("Auth", ["$firebaseAuth",
 		var ref = new Firebase("https://medxport.firebaseio.com");
 		return $firebaseAuth(ref);
 	}
-]);
+	]);
 
 $(function(){
 	var availableDoctorTypes = [
-		'Audiologist',
-		'Allergist',
-		'Andrologist',
-		'Anesthesiologist',
-		'Cardiologist',
-		'Cardiovascular Surgeon',
-		'Clinical Neurophysiologist',
-		'Dentist',
-		'Dermatologist',
-		'Emergency Doctor',
-		'Endocrinologist',
-		'Epidemiologist',
-		'ENT Specialist',
-		'Family Practitioner',
-		'Gastroenterologist',
-		'Gynecologist',
-		'Psychiatrist',
-		'Hematologist',
-		'Hepatologists',
-		'Neurologist',
-		'Obstetrician',
-		'Oncologist',
-		'Pediatrician'
+	'Audiologist',
+	'Allergist',
+	'Andrologist',
+	'Anesthesiologist',
+	'Cardiologist',
+	'Cardiovascular Surgeon',
+	'Clinical Neurophysiologist',
+	'Dentist',
+	'Dermatologist',
+	'Emergency Doctor',
+	'Endocrinologist',
+	'Epidemiologist',
+	'ENT Specialist',
+	'Family Practitioner',
+	'Gastroenterologist',
+	'Gynecologist',
+	'Psychiatrist',
+	'Hematologist',
+	'Hepatologists',
+	'Neurologist',
+	'Obstetrician',
+	'Oncologist',
+	'Pediatrician'
 	];
 
 	$("#doctorTypes").autocomplete({
@@ -50,7 +50,7 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 		    // childData will be the actual contents of the child
 		    var childData = childSnapshot.val();
 		    $scope.clinics.push(childData.clinicName);
-		  });
+		});
 			console.log($scope.clinics);
 		}, function (errorObject) {
 			console.log("The read failed: " + errorObject.code);
@@ -66,21 +66,39 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 				$scope.message = "User created with uid: " + userData.uid;
 				var authUrl = new Firebase("https://medxport.firebaseio.com");
 				var userChild = authUrl.child('users').child(userData.uid);
+				
+				var e = document.getElementById("clinicSelection");
+				var strUser = e.options[e.selectedIndex].text;
 				userChild.set({
 					name:{
 						isNew: true,
-						type: doctor,
+						type: "doctor",
 						first_name: $scope.first_name,
 						last_name: $scope.last_name,
-						doctorType: $scope.doctorType
+						doctorType: $scope.doctorType,
+						clinic: strUser
 					}
 				});
+				ref = new Firebase("https://medxport.firebaseio.com/Clinics/strUser"); 
+				ref.on("value", function(snapshot) {
+					snapshot.forEach(function(childSnapshot) {
+		   			 // key will be "fred" the first time and "barney" the second time
+		   			 var key = childSnapshot.key();
+		   			 // childData will be the actual contents of the child
+		   			 var childData = childSnapshot.val();
+		   			 $scope.clinics.push(childData.clinicName);
+					});
+					console.log($scope.clinics);
+				}, function (errorObject) {
+					console.log("The read failed: " + errorObject.code);
+				});
+
 			}).catch(function(error) {
 				$scope.error = "There was an error creating the user." + error;
 			});
 		}
 	}
-]);
+	]);
 
 // app.config(function($routeProvider) {
 // 	$routeProvider.when('/login', {
@@ -130,7 +148,7 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 // 			});
 // 		}
 // 	});
-	
+
 // /*  ref.authWithPassword({
 //   	email    : "bobtony@firebase.com",
 //   	password : "correcthorsebatterystaple"

@@ -23,7 +23,7 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 				userChild.set({
 					name:{
 						isNew: true,
-						type: patient,
+						type: "patient",
 						first_name: $scope.first_name,
 						last_name: $scope.last_name
 					}
