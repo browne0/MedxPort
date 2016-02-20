@@ -14,14 +14,17 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
+  - Firebase (2.5.1)
   - JVFloatLabeledTextField (1.1.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - Firebase (>= 2.5.0)
   - JVFloatLabeledTextField
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
   JVFloatLabeledTextField: ea4a3d8387ddd43724c472bb2b8ab39b79af05d4
 
 COCOAPODS: 0.39.0
