@@ -54,12 +54,10 @@ app.controller("LoginCtrl", ["$scope", "Auth","$rootScope", function($scope, Aut
 		     dat = authData.uid;
 		     sessionStorage['dat'] = dat;
 		     console.log(dat);
-		     document.cookie = 'username=' +dat;
 		     window.location.href = "../home/home.html";
-
 		  }
 		});
-}
+	}
 }]);
 
 // app.config(function($routeProvider) {
