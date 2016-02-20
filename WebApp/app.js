@@ -9,7 +9,7 @@ app.controller("SampleCtrl", function($scope, $firebaseObject) {
 			console.log("Error creating user:", error);
 		} else {
 			console.log("Successfully created user account with uid:", userData.uid);
-			ref.child("users").child(authData.uid).set({
+			ref.child("users").child(userData.uid).set({
 				name:{
 					first_name: "hello",
 					last_name: "bob"
