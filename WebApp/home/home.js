@@ -53,13 +53,12 @@ app.controller("homeCtrl", ["$scope", "Auth",
 			console.log("The read failed: " + errorObject.code);
 		});
 		var authUrl = new Firebase("https://medxport.firebaseio.com");
-		var userChild = authUrl.child('users').child($scope.userData.uid);
+		
 		var e = document.getElementById("clinicSelection");
 		//index of selected item
-		var index = e.selectedIndex;
-
-		//the selected option
-		var strUser = e.options[e.selectedIndex].text;
+		var e = document.getElementById("clinicSelection");
+				var index = e.selectedIndex;
+				
 		/*console.log(index + " " + strUser);
 		var query = new Firebase("https://medxport.firebaseio.com/Clinics/" + $scope.ids[index] + "/doctorIds"); 
 		query.on("value", function(snapshot) {
