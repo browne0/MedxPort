@@ -1,4 +1,5 @@
 var app = angular.module("medxport", ["firebase"]);
+var dat;
 
 app.factory("Auth", ["$firebaseAuth",
 	function($firebaseAuth) {
@@ -7,8 +8,21 @@ app.factory("Auth", ["$firebaseAuth",
 	}
 	]);
 
-app.controller("LoginCtrl", ["$scope", "Auth", function($scope, Auth) {
+app.factory('userDat', function() {
+	console.log("does work");
+    var keyValue;
 
+    userDat.setKey = function(key) {
+    keyValue = $scope.userData;
+    };
+    userDat.getKey = function(){
+    	return "hello";
+    };
+
+    return userDat;
+});
+
+app.controller("LoginCtrl", ["$scope", "Auth","$rootScope", function($scope, Auth, $rootScope) {
 	$scope.loginUser = function() {
 		$scope.message = null;
 		$scope.error = null;
@@ -37,10 +51,13 @@ app.controller("LoginCtrl", ["$scope", "Auth", function($scope, Auth) {
 		    console.log("Login Failed!", error);
 		  } else {
 		    console.log("Authenticated successfully with payload:", authData);
-		    location.href='../home/home.html';
+		     dat = authData.uid;
+		     sessionStorage['dat'] = dat;
+		     console.log(dat);
+		     window.location.href = "../home/home.html";
 		  }
 		});
-}
+	}
 }]);
 
 // app.config(function($routeProvider) {

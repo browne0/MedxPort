@@ -1,28 +1,47 @@
 var app = angular.module("medxport", ["firebase"]);
-
+var data = sessionStorage['dat'];
 app.factory("Auth", ["$firebaseAuth",
 	function($firebaseAuth) {
 		var ref = new Firebase("https://medxport.firebaseio.com");
 		return $firebaseAuth(ref);
 	}
-]);
+	]);
 
-app.controller("RegisterCtrl", ["$scope", "Auth",
-	function($scope, Auth) {
-		$scope.createUser = function() {
-			$scope.message = null;
-			$scope.error = null;
-
-			Auth.$createUser({
-				email: $scope.email,
-				password: $scope.password
-			}).then(function(userData) {
-				$scope.message = "User created with uid: " + userData.uid;
-			}).catch(function(error) {
-				$scope.error = "There was an error creating the user.";
-			});
-		}
+app.controller("homeCtrl", ["$scope", "Auth",
+	function($scope, Auth,userDat) {
+		$scope.userData = data;
+		var ref = new Firebase("https://medxport.firebaseio.com/Clinics/");
+		// Attach an asynchronous callback to read the data at our posts reference
+		var clinic = [];
+		ref.on("value", function(snapshot) {
+			snapshot.forEach(function(childSnapshot) {
+		    // key will be "fred" the first time and "barney" the second time
+		    var key = childSnapshot.key();
+		    // childData will be the actual contents of the child
+		    var childData = childSnapshot.val();
+		    clinic.push(childData.clinicName);
+		  });
+			
+		}, function (errorObject) {
+			console.log("The read failed: " + errorObject.code);
+		});
+		ref = new Firebase("https://medxport.firebaseio.com/users/" + data);
+		var userInfo = [];
+		ref.on("value", function(snapshot) {
+			snapshot.forEach(function(childSnapshot) {
+		    // key will be "fred" the first time and "barney" the second time
+		    var key = childSnapshot.key();
+		    // childData will be the actual contents of the child
+		    var childData = childSnapshot.val();
+		    userInfo.push(childData);
+		  });
+			$scope.isNew = userInfo[0];
+			$scope.type = userInfo[2];
+		}, function (errorObject) {
+			console.log("The read failed: " + errorObject.code);
+		});
 	}
+	
 ]);
 
 // app.config(function($routeProvider) {
@@ -73,7 +92,7 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 // 			});
 // 		}
 // 	});
-	
+
 // /*  ref.authWithPassword({
 //   	email    : "bobtony@firebase.com",
 //   	password : "correcthorsebatterystaple"
