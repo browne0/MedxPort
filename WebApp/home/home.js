@@ -7,26 +7,14 @@ app.factory("Auth", ["$firebaseAuth",
 	}
 	]);
 
-app.controller("homeCtrl", ["$scope", "Auth",
-	function($scope, Auth,userDat) {
+app.controller("homeCtrl", ["$scope", "Auth","$firebaseObject",
+	function($scope, Auth,$firebaseObject) {
 		$scope.userData = data;
-		var ref = new Firebase("https://medxport.firebaseio.com/Clinics/");
-		// Attach an asynchronous callback to read the data at our posts reference
-		var clinic = [];
-		ref.on("value", function(snapshot) {
-			snapshot.forEach(function(childSnapshot) {
-		    // key will be "fred" the first time and "barney" the second time
-		    var key = childSnapshot.key();
-		    // childData will be the actual contents of the child
-		    var childData = childSnapshot.val();
-		    clinic.push(childData.clinicName);
-		  });
-			
-		}, function (errorObject) {
-			console.log("The read failed: " + errorObject.code);
-		});
-		ref = new Firebase("https://medxport.firebaseio.com/users/" + data);
+		console.log("here");
+		//This calls the users data for when the come onto the page
+		var ref = new Firebase("https://medxport.firebaseio.com/users/" + data);
 		var userInfo = [];
+
 		ref.on("value", function(snapshot) {
 			snapshot.forEach(function(childSnapshot) {
 		    // key will be "fred" the first time and "barney" the second time
@@ -42,6 +30,33 @@ app.controller("homeCtrl", ["$scope", "Auth",
 		}, function (errorObject) {
 			console.log("The read failed: " + errorObject.code);
 		});
+
+		//This pulls clinic data
+		ref = new Firebase("https://medxport.firebaseio.com/Clinics/");
+		$scope.clinics = [];
+		$scope.ids = [];
+		//$scope.data = $firebaseObject(ref);
+		$scope.messages = $firebaseArray(ref);
+		console.log($scope.messages);
+		console.log($scope.data);
+		$scope.data.$watch(function () {
+			console.log("data changed");
+		})	
+		
+		var authUrl = new Firebase("https://medxport.firebaseio.com");
+		var e = document.getElementById("clinicSelection");
+		var index = e.selectedIndex;
+		
+		//index of selected item
+		var e = document.getElementById("clinicSelection");
+		var index = e.selectedIndex;
+		/*console.log(index + " " + strUser);
+		var query = new Firebase("https://medxport.firebaseio.com/Clinics/" + $scope.ids[index] + "/doctorIds"); 
+		query.on("value", function(snapshot) {
+		  console.log(snapshot.val());
+		}, function (errorObject) {
+		  console.log("The read failed: " + errorObject.code);
+		});*/
 	}
 ]);
 
