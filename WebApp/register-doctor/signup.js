@@ -72,12 +72,12 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 				$scope.message = "User created with uid: " + userData.uid;
 				var authUrl = new Firebase("https://medxport.firebaseio.com");
 				var userChild = authUrl.child('users').child(userData.uid);
-				
+				var Doctorid = userData.uid;
 				var e = document.getElementById("clinicSelection");
+				var index = e.selectedIndex;
 				var strUser = e.options[e.selectedIndex].text;
 				userChild.set({
-					name:{
-						isNew: true,
+					info:{
 						type: "doctor",
 						first_name: $scope.first_name,
 						last_name: $scope.last_name,
@@ -85,20 +85,16 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 						clinic: strUser
 					}
 				});
-				ref = new Firebase("https://medxport.firebaseio.com/Clinics/strUser"); 
-				ref.on("value", function(snapshot) {
-					snapshot.forEach(function(childSnapshot) {
-		   			 // key will be "fred" the first time and "barney" the second time
-		   			 var key = childSnapshot.key();
-		   			 // childData will be the actual contents of the child
-		   			 var childData = childSnapshot.val();
-		   			 $scope.clinics.push(childData.clinicName);
-					});
+				ref = new Firebase("https://medxport.firebaseio.com/Clinics/" + $scope.ids[index] + "/doctorIds"); 
+				var usersRef = ref;
+				usersRef.update({
+					[Doctorid]: $scope.first_name + " " + $scope.last_name
+				});
+					
 					console.log($scope.clinics);
 				}, function (errorObject) {
 					console.log("The read failed: " + errorObject.code);
-				});
-
+				
 			}).catch(function(error) {
 				$scope.error = "There was an error creating the user." + error;
 			});

@@ -36,6 +36,7 @@
 	<br>
 
 	<div class="leftPatient">
+<<<<<<< HEAD
             <div class="jumbotron">
                 <div class="row">
                     <div class="col-sm-12">
@@ -126,6 +127,550 @@
                 </div>
             </div>
 	</div>
+=======
+<form id="select_booking_time" action="/bookings/new" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="2gL8GOIGMM329zHNiM7/HtfQs+irhkUefP0Qs2Hh6kqQKnUJ3wNoyOr0QCXDC2ynEKnuUQopSRmg4NsaqhZMWw==" />
+<input value="469" type="hidden" name="booking[service_id]" id="booking_service_id" />
+<input type="hidden" name="booking[booked_to]" id="booking_booked_to" />
+<input value="" type="hidden" name="booking[selected_resources]" id="booking_selected_resources" />
+
+	<section class="main" id="weekday_available">
+<header>
+  <h2>Select available time</h2>
+
+  <div id="filterButtons">
+    <div class="button date datebutton"><a href="#">Select date<input type="hidden" id="datepicker" placeholder="Select date"></a></div>
+  </div>
+
+  <nav id="filterWeek">
+    <div class="weekNavigation prev"><a href="/services/469/slots?from=2016-02-29&amp;selected_resources=">&lt;&lt; Previous week</a></div>
+    <div class="weekNavigation next"><a href="/services/469/slots?from=2016-03-14&amp;selected_resources=">Next week &gt;&gt;</a></div>
+  </nav>
+
+</header>
+
+<table class="days-7">
+<thead>
+  <tr>
+  <th>
+    <span class="date">
+      <strong class="long">Monday</strong>
+      <strong class="shorty">Mon</strong>
+      <em class="long"> 7 March</em>
+      <em class="shorty">Mar 07</em>
+    </span>
+  </th>
+  <th>
+    <span class="date">
+      <strong class="long">Tuesday</strong>
+      <strong class="shorty">Tue</strong>
+      <em class="long"> 8 March</em>
+      <em class="shorty">Mar 08</em>
+    </span>
+  </th>
+  <th>
+    <span class="date">
+      <strong class="long">Wednesday</strong>
+      <strong class="shorty">Wed</strong>
+      <em class="long"> 9 March</em>
+      <em class="shorty">Mar 09</em>
+    </span>
+  </th>
+  <th>
+    <span class="date">
+      <strong class="long">Thursday</strong>
+      <strong class="shorty">Thu</strong>
+      <em class="long">10 March</em>
+      <em class="shorty">Mar 10</em>
+    </span>
+  </th>
+  <th class="selected">
+    <span class="date">
+      <strong class="long">Friday</strong>
+      <strong class="shorty">Fri</strong>
+      <em class="long">11 March</em>
+      <em class="shorty">Mar 11</em>
+    </span>
+  </th>
+  <th>
+    <span class="date">
+      <strong class="long">Saturday</strong>
+      <strong class="shorty">Sat</strong>
+      <em class="long">12 March</em>
+      <em class="shorty">Mar 12</em>
+    </span>
+  </th>
+  <th>
+    <span class="date">
+      <strong class="long">Sunday</strong>
+      <strong class="shorty">Sun</strong>
+      <em class="long">13 March</em>
+      <em class="shorty">Mar 13</em>
+    </span>
+  </th>
+  </thead>
+<tbody id="timepicker" data-max-slots="1" data-time-format="h:mm A">
+  <tr>
+    <td>
+      <ul class="intervals">
+        <li data-timestamp="2016-03-07 09:00:00 -0500" data-timestamp-end="2016-03-07 10:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-07 09:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-07_090000_-0500" />
+          <h3>9:00 AM - 10:00 AM</h3>
+          <h5>
+            <span class="date">Mar 07</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-07 10:00:00 -0500" data-timestamp-end="2016-03-07 11:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-07 10:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-07_100000_-0500" />
+          <h3>10:00 AM - 11:00 AM</h3>
+          <h5>
+            <span class="date">Mar 07</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-07 11:00:00 -0500" data-timestamp-end="2016-03-07 12:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-07 11:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-07_110000_-0500" />
+          <h3>11:00 AM - 12:00 PM</h3>
+          <h5>
+            <span class="date">Mar 07</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-07 12:00:00 -0500" data-timestamp-end="2016-03-07 13:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-07 12:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-07_120000_-0500" />
+          <h3>12:00 PM - 1:00 PM</h3>
+          <h5>
+            <span class="date">Mar 07</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-07 13:00:00 -0500" data-timestamp-end="2016-03-07 14:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-07 13:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-07_130000_-0500" />
+          <h3>1:00 PM - 2:00 PM</h3>
+          <h5>
+            <span class="date">Mar 07</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-07 14:00:00 -0500" data-timestamp-end="2016-03-07 15:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-07 14:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-07_140000_-0500" />
+          <h3>2:00 PM - 3:00 PM</h3>
+          <h5>
+            <span class="date">Mar 07</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-07 15:00:00 -0500" data-timestamp-end="2016-03-07 16:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-07 15:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-07_150000_-0500" />
+          <h3>3:00 PM - 4:00 PM</h3>
+          <h5>
+            <span class="date">Mar 07</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-07 16:00:00 -0500" data-timestamp-end="2016-03-07 17:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-07 16:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-07_160000_-0500" />
+          <h3>4:00 PM - 5:00 PM</h3>
+          <h5>
+            <span class="date">Mar 07</span>
+          </h5>
+          </label>
+        </li>
+      </ul>
+    </td>
+    <td>
+      <ul class="intervals">
+        <li data-timestamp="2016-03-08 09:00:00 -0500" data-timestamp-end="2016-03-08 10:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-08 09:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-08_090000_-0500" />
+          <h3>9:00 AM - 10:00 AM</h3>
+          <h5>
+            <span class="date">Mar 08</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-08 10:00:00 -0500" data-timestamp-end="2016-03-08 11:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-08 10:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-08_100000_-0500" />
+          <h3>10:00 AM - 11:00 AM</h3>
+          <h5>
+            <span class="date">Mar 08</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-08 11:00:00 -0500" data-timestamp-end="2016-03-08 12:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-08 11:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-08_110000_-0500" />
+          <h3>11:00 AM - 12:00 PM</h3>
+          <h5>
+            <span class="date">Mar 08</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-08 12:00:00 -0500" data-timestamp-end="2016-03-08 13:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-08 12:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-08_120000_-0500" />
+          <h3>12:00 PM - 1:00 PM</h3>
+          <h5>
+            <span class="date">Mar 08</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-08 13:00:00 -0500" data-timestamp-end="2016-03-08 14:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-08 13:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-08_130000_-0500" />
+          <h3>1:00 PM - 2:00 PM</h3>
+          <h5>
+            <span class="date">Mar 08</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-08 14:00:00 -0500" data-timestamp-end="2016-03-08 15:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-08 14:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-08_140000_-0500" />
+          <h3>2:00 PM - 3:00 PM</h3>
+          <h5>
+            <span class="date">Mar 08</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-08 15:00:00 -0500" data-timestamp-end="2016-03-08 16:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-08 15:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-08_150000_-0500" />
+          <h3>3:00 PM - 4:00 PM</h3>
+          <h5>
+            <span class="date">Mar 08</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-08 16:00:00 -0500" data-timestamp-end="2016-03-08 17:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-08 16:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-08_160000_-0500" />
+          <h3>4:00 PM - 5:00 PM</h3>
+          <h5>
+            <span class="date">Mar 08</span>
+          </h5>
+          </label>
+        </li>
+      </ul>
+    </td>
+    <td>
+      <ul class="intervals">
+        <li data-timestamp="2016-03-09 09:00:00 -0500" data-timestamp-end="2016-03-09 10:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-09 09:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-09_090000_-0500" />
+          <h3>9:00 AM - 10:00 AM</h3>
+          <h5>
+            <span class="date">Mar 09</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-09 10:00:00 -0500" data-timestamp-end="2016-03-09 11:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-09 10:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-09_100000_-0500" />
+          <h3>10:00 AM - 11:00 AM</h3>
+          <h5>
+            <span class="date">Mar 09</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-09 11:00:00 -0500" data-timestamp-end="2016-03-09 12:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-09 11:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-09_110000_-0500" />
+          <h3>11:00 AM - 12:00 PM</h3>
+          <h5>
+            <span class="date">Mar 09</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-09 12:00:00 -0500" data-timestamp-end="2016-03-09 13:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-09 12:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-09_120000_-0500" />
+          <h3>12:00 PM - 1:00 PM</h3>
+          <h5>
+            <span class="date">Mar 09</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-09 13:00:00 -0500" data-timestamp-end="2016-03-09 14:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-09 13:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-09_130000_-0500" />
+          <h3>1:00 PM - 2:00 PM</h3>
+          <h5>
+            <span class="date">Mar 09</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-09 14:00:00 -0500" data-timestamp-end="2016-03-09 15:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-09 14:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-09_140000_-0500" />
+          <h3>2:00 PM - 3:00 PM</h3>
+          <h5>
+            <span class="date">Mar 09</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-09 15:00:00 -0500" data-timestamp-end="2016-03-09 16:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-09 15:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-09_150000_-0500" />
+          <h3>3:00 PM - 4:00 PM</h3>
+          <h5>
+            <span class="date">Mar 09</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-09 16:00:00 -0500" data-timestamp-end="2016-03-09 17:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-09 16:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-09_160000_-0500" />
+          <h3>4:00 PM - 5:00 PM</h3>
+          <h5>
+            <span class="date">Mar 09</span>
+          </h5>
+          </label>
+        </li>
+      </ul>
+    </td>
+    <td>
+      <ul class="intervals">
+        <li data-timestamp="2016-03-10 09:00:00 -0500" data-timestamp-end="2016-03-10 10:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-10 09:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-10_090000_-0500" />
+          <h3>9:00 AM - 10:00 AM</h3>
+          <h5>
+            <span class="date">Mar 10</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-10 10:00:00 -0500" data-timestamp-end="2016-03-10 11:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-10 10:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-10_100000_-0500" />
+          <h3>10:00 AM - 11:00 AM</h3>
+          <h5>
+            <span class="date">Mar 10</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-10 11:00:00 -0500" data-timestamp-end="2016-03-10 12:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-10 11:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-10_110000_-0500" />
+          <h3>11:00 AM - 12:00 PM</h3>
+          <h5>
+            <span class="date">Mar 10</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-10 12:00:00 -0500" data-timestamp-end="2016-03-10 13:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-10 12:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-10_120000_-0500" />
+          <h3>12:00 PM - 1:00 PM</h3>
+          <h5>
+            <span class="date">Mar 10</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-10 13:00:00 -0500" data-timestamp-end="2016-03-10 14:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-10 13:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-10_130000_-0500" />
+          <h3>1:00 PM - 2:00 PM</h3>
+          <h5>
+            <span class="date">Mar 10</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-10 14:00:00 -0500" data-timestamp-end="2016-03-10 15:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-10 14:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-10_140000_-0500" />
+          <h3>2:00 PM - 3:00 PM</h3>
+          <h5>
+            <span class="date">Mar 10</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-10 15:00:00 -0500" data-timestamp-end="2016-03-10 16:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-10 15:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-10_150000_-0500" />
+          <h3>3:00 PM - 4:00 PM</h3>
+          <h5>
+            <span class="date">Mar 10</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-10 16:00:00 -0500" data-timestamp-end="2016-03-10 17:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-10 16:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-10_160000_-0500" />
+          <h3>4:00 PM - 5:00 PM</h3>
+          <h5>
+            <span class="date">Mar 10</span>
+          </h5>
+          </label>
+        </li>
+      </ul>
+    </td>
+    <td class="selected">
+      <ul class="intervals">
+        <li data-timestamp="2016-03-11 09:00:00 -0500" data-timestamp-end="2016-03-11 10:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-11 09:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-11_090000_-0500" />
+          <h3>9:00 AM - 10:00 AM</h3>
+          <h5>
+            <span class="date">Mar 11</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-11 10:00:00 -0500" data-timestamp-end="2016-03-11 11:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-11 10:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-11_100000_-0500" />
+          <h3>10:00 AM - 11:00 AM</h3>
+          <h5>
+            <span class="date">Mar 11</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-11 11:00:00 -0500" data-timestamp-end="2016-03-11 12:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-11 11:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-11_110000_-0500" />
+          <h3>11:00 AM - 12:00 PM</h3>
+          <h5>
+            <span class="date">Mar 11</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-11 12:00:00 -0500" data-timestamp-end="2016-03-11 13:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-11 12:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-11_120000_-0500" />
+          <h3>12:00 PM - 1:00 PM</h3>
+          <h5>
+            <span class="date">Mar 11</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-11 13:00:00 -0500" data-timestamp-end="2016-03-11 14:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-11 13:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-11_130000_-0500" />
+          <h3>1:00 PM - 2:00 PM</h3>
+          <h5>
+            <span class="date">Mar 11</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-11 14:00:00 -0500" data-timestamp-end="2016-03-11 15:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-11 14:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-11_140000_-0500" />
+          <h3>2:00 PM - 3:00 PM</h3>
+          <h5>
+            <span class="date">Mar 11</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-11 15:00:00 -0500" data-timestamp-end="2016-03-11 16:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-11 15:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-11_150000_-0500" />
+          <h3>3:00 PM - 4:00 PM</h3>
+          <h5>
+            <span class="date">Mar 11</span>
+          </h5>
+          </label>
+        </li>
+        <li data-timestamp="2016-03-11 16:00:00 -0500" data-timestamp-end="2016-03-11 17:00:00 -0500">
+          <label class="interval">
+          <input class="hidden" type="radio" value="2016-03-11 16:00:00 -0500" name="booking[booked_from]" id="booking_booked_from_2016-03-11_160000_-0500" />
+          <h3>4:00 PM - 5:00 PM</h3>
+          <h5>
+            <span class="date">Mar 11</span>
+          </h5>
+          </label>
+        </li>
+      </ul>
+    </td>
+    <td>
+        <div class="next_available">
+          No availability on selected date. Please try another date.
+        </div>
+    </td>
+    <td>
+        <div class="next_available">
+          No availability on selected date. Please try another date.
+        </div>
+    </td>
+  </tr>
+</tbody>
+</table>
+
+<p id="summary" class="summary">
+  <span data-item="service">MedxPort</span>
+  <span data-booked-from="" id="summary_booking_time" data-i18n-to="to">Please select an available time.</span>.
+</p>
+
+<p id="no_selection" class="summary warning">
+Please select an available time.
+</p>
+
+<p id="max_slots_warning" class="summary">
+Cannot reserve more than 1 timeslots
+</p>
+
+
+</section>
+
+
+<section id="step-up">
+	<button type="submit">
+		<span>Next: Confirmation</span>
+	</button>
+	<small>Step 1 of 4 <span class="stepper step-1"> </span></small>
+</section>
+
+</form>
+
+
+<script src="rip2.js"></script>
+<script>
+Date.prototype.mGetDay = function() {
+  return ((this.getDay() + 6) %7) + 1;
+}
+
+$(function() {
+
+  $(".datebutton").click( function() { $('#datepicker').datepicker('show'); } );
+
+  $("#datepicker").datepicker({
+    dateFormat: 'yy-mm-dd',
+    maxDate: '2017-02-20',
+    showOn: 'button',
+    buttonImage: 'http://www.d2lr00tub7o6zg.cloudfront.net/assets/datecalendar-15788b76bfdc57e81fe36343beebe97c27af0099fec6cfddf59bfacfff7a6d24.gif',
+    buttonImageOnly: true,
+    showOtherMonths: true,
+    selectOtherMonths: false,
+    showAnim: 'slideDown',
+    minDate: '2016-02-20',
+    defaultDate: '2016-03-07',
+    onSelect: function(selectedDate, inst) {
+      document.location.href = '/services/469/slots?selected_resources=&from=' + selectedDate;
+    },
+    beforeShowDay: hideDays
+  });
+
+  function hideDays(date) {
+    if ( $('<div class="day_' + date.mGetDay() + '" />').css('display') == 'none' ) {
+      return [false, ''];
+    } else {
+      return [true, ''];
+    }
+  }
+});
+=======
+</script>
+		<br><br><br><br><br><br>
+<!-- 	</div>
+>>>>>>> fd9974a74392a4453f7f1fb39dfb972c545e095c
 	<div class="rightPatient">
 		<h2> Available Times </h2>
 		<br>

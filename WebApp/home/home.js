@@ -35,13 +35,14 @@ app.controller("homeCtrl", ["$scope", "Auth",
 		    var childData = childSnapshot.val();
 		    userInfo.push(childData);
 		  });
-			$scope.isNew = userInfo[0];
-			$scope.type = userInfo[2]; 
+			$scope.isNew = userInfo[0].isNew;
+			console.log($scope.isNew);
+			$scope.type = userInfo[0].type;
+			console.log($scope.type); 
 		}, function (errorObject) {
 			console.log("The read failed: " + errorObject.code);
 		});
 	}
-	
 ]);
 
 // app.config(function($routeProvider) {
