@@ -22,7 +22,7 @@ app.controller("homeCtrl", ["$scope", "Auth",
 		    // childData will be the actual contents of the child
 		    var childData = childSnapshot.val();
 		    userInfo.push(childData);
-		  });
+		});
 			$scope.isNew = userInfo[0].isNew;
 			console.log($scope.isNew);
 			$scope.type = userInfo[0].type;
@@ -44,6 +44,9 @@ app.controller("homeCtrl", ["$scope", "Auth",
 		ref = new Firebase("https://medxport.firebaseio.com/Clinics/");
 		var clinics = [];
 		var ids = [];
+		var selected;
+		var id = 0;
+		var names = [];
 		ref.on("value", function(snapshot) {
 			snapshot.forEach(function(childSnapshot) {
 		    // key will be "fred" the first time and "barney" the second time
@@ -59,30 +62,49 @@ app.controller("homeCtrl", ["$scope", "Auth",
 
 			var mySelect = $('#clinicSelection');
 			$.each(clinics, function(val, text) {
-			    mySelect.append(
-			        $('<option></option>').val(val).html(text)
-			    );
+				mySelect.append(
+					$('<option></option>').val(val).html(text)
+					);
 			});
 		}, function (errorObject) {
 			console.log("The read failed: " + errorObject.code);
 		});
-			var authUrl = new Firebase("https://medxport.firebaseio.com");
-			var e = document.getElementById("clinicSelection");
-			var index = e.selectedIndex;
+		var authUrl = new Firebase("https://medxport.firebaseio.com");
+		var e = document.getElementById("clinicSelection");
+		var index = e.selectedIndex;
 
-			$( "#clinicSelection" ).on( "input", function() {
-			  	console.log( $(this).children().text());
+			//dynammically detects change in
+			$('#clinicSelection').change(function(){
+				names = [];
+				console.log(names);
+				selected = $(this).find(':selected').text();
+				id = ($(this).find(':selected').val());
+				console.log(ids[id]);
+			   //query on change
+			   var query = new Firebase("https://medxport.firebaseio.com/Clinics/" + ids[id] + "/doctorIds/"); 
+			   query.on("value", function(snapshot) {
+			   	console.log(snapshot.val());
+			   	for(var key in snapshot.val()) {
+				  	//gets the first names of doctors
+				  	names.push(snapshot.val()[key]);
+				  	console.log(names);
+				}
+				var mySelect = $('#doctorSelection');
+				mySelect.empty();
+				$.each(names, function(val, text) {
+					mySelect.html(
+				  		$('<option></option>').val(val).html(text)
+				  	);
+				  });
+				}, function (errorObject) {
+					console.log("The read failed: " + errorObject.code);
+				});
 			});
 
-		/*console.log(index + " " + strUser);
-		var query = new Firebase("https://medxport.firebaseio.com/Clinics/" + $scope.ids[index] + "/doctorIds"); 
-		query.on("value", function(snapshot) {
-		  console.log(snapshot.val());
-		}, function (errorObject) {
-		  console.log("The read failed: " + errorObject.code);
-		});*/
-	}
-]);
+
+
+		}
+		]);
 
 // app.config(function($routeProvider) {
 // 	$routeProvider.when('/login', {
