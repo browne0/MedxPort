@@ -54,6 +54,8 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 				var userChild = authUrl.child('users').child(userData.uid);
 				userChild.set({
 					name:{
+						isNew: true,
+						type: doctor,
 						first_name: $scope.first_name,
 						last_name: $scope.last_name,
 						doctorType: $scope.doctorType
