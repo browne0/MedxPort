@@ -22,11 +22,11 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 				var userChild = authUrl.child('users').child(userData.uid);
 				userChild.set({
 					name:{
-						isNew: true,
-						type: patient,
 						first_name: $scope.first_name,
 						last_name: $scope.last_name
-					}
+					},
+					isNew: true,
+					type: "patient"
 				});
 			}).catch(function(error) {
 				$scope.error = "There was an error creating the user." + error;
