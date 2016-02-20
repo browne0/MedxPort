@@ -30,8 +30,8 @@
     -moz-box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);
     box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);
 
-    padding:20px;
-    height:400px;
+    padding:20px 20px 20px 0px;
+    height:410px;
     overflow: hidden;
 }
 
@@ -92,8 +92,9 @@
     left: 5;
     padding-left: 0;
     position: absolute;
-    /*background-image: url(img/arrowleft.jpg);*/
-    background-color: black;
+    background-image: url(left.jpg);
+    background-color: white;
+    opacity: 2;
     width:10%;
     height:3%;
 
@@ -103,8 +104,9 @@
     right: 0;
     padding-right: 0;
     position:absolute;
-    /*background-image: url(img/arrowright.png);*/
-    background-color: black;
+    background-image: url(right.jpg);
+    background-color: white;
+    opacity:2;
     width:10%;
     height:3%;
 }
@@ -146,7 +148,7 @@ visibility: none;
     padding: 0 7px;
     text-align: center;
     line-height: 26px;
-    padding: 10px 0px 35px 0px;
+    padding: 10px 0px 30px 0px;
     width:20%;
 }
 
@@ -165,6 +167,11 @@ visibility: none;
 .ui-datepicker-calendar .ui-state-active {
     color: #6a9113;
     border-color: #6a9113;
+    border-radius: 4px;
+    border-spacing: 20px 50px;
+    padding: 20px;
+    font-size: 110%;
+
 }
 /* Other Months Days*/
 .ui-datepicker-other-month .ui-state-default {
