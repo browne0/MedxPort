@@ -43,15 +43,21 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 	function($scope, Auth) {
 		var ref = new Firebase("https://medxport.firebaseio.com/Clinics/");
 		$scope.clinics = [];
+		$scope.ids = [];
 		ref.on("value", function(snapshot) {
 			snapshot.forEach(function(childSnapshot) {
 		    // key will be "fred" the first time and "barney" the second time
 		    var key = childSnapshot.key();
 		    // childData will be the actual contents of the child
 		    var childData = childSnapshot.val();
+		    console.log(childData);
 		    $scope.clinics.push(childData.clinicName);
 		});
-			console.log($scope.clinics);
+			for(key in snapshot.val()){
+				$scope.ids.push(key);
+			}
+
+			console.log($scope.ids);
 		}, function (errorObject) {
 			console.log("The read failed: " + errorObject.code);
 		});
