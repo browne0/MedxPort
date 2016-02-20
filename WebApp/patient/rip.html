@@ -1,34 +1,40 @@
-<!DOCTYPE html> 
-<html>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7" lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7" lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 lte9 lte8" lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 lte9" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 9]>  <html lang="en" dir="ltr"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" dir="ltr"> <!--<![endif]-->
 <head>
-<title> MedxPort </title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-<script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
-
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-<link href="../style.css" type="text/css" rel="StyleSheet">
-<link rel="dns-prefetch" href="//d2lr00tub7o6zg.cloudfront.net">
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Online booking for Medxport</title>
+	<meta http-equiv="description" content="Reserver online hos Medxport">
+	<meta http-equiv="keywords" content="reservere, bestille, timebestilling, makeplans">
+  <link rel="dns-prefetch" href="//d2lr00tub7o6zg.cloudfront.net">
   <link rel="stylesheet" media="all" href="rip.css" />
+  
+	<!--[if lte IE 8]>
+		<script>(function(){var e="abbr,article,aside,audio,canvas,datalist,details,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(','),i=e.length;while(i--){document.createElement(e[i]);}}());</script>
+	<![endif]-->
+	
+	<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="2dhdrFSw7z4gIctCqvx3HVoAukJJ0og3V01li9ydgbKT8NS9abW3OzwiuqrhOeSknXnn++h9hDCLUK4iF2onow==" />
 </head>
-
 <body>
-	<div class="container">
-	<h1> Reserve an Appointment </h1>
-	<hr>
-	<div class="top">
-		<br>
-		<input type="text" ng-model="hospital" placeholder="Hospital Name">
-		<input type="text" ng-model="department" placeholder="Department">
-		<input type="text" ng-model="docname" placeholder="Doctor Name">
-	</div>
-	<br>
 
-	<div class="leftPatient">
-		<h2>Date:</h2>
-		<br>
-		
+<header>
+	<h1><a href="/">Medxport</a></h1>
+	<aside>
+		<a href="http://test.makeplans.net" target="_blank">
+		Provided by <span id="site_name">MakePlans</span></a>
+	</aside>
+</header>
+
+
+
+
 <form id="select_booking_time" action="/bookings/new" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="2gL8GOIGMM329zHNiM7/HtfQs+irhkUefP0Qs2Hh6kqQKnUJ3wNoyOr0QCXDC2ynEKnuUQopSRmg4NsaqhZMWw==" />
 <input value="469" type="hidden" name="booking[service_id]" id="booking_service_id" />
 <input type="hidden" name="booking[booked_to]" id="booking_booked_to" />
@@ -532,7 +538,7 @@ Cannot reserve more than 1 timeslots
 </form>
 
 
-<script src="rip2.js"></script>
+<script src="//d2lr00tub7o6zg.cloudfront.net/assets/theme_amsterdam-9c2bf18c5610ce76516cda47812a9fac5d72e1ebb97577389603642d07f7f096.js"></script>
 <script>
 Date.prototype.mGetDay = function() {
   return ((this.getDay() + 6) %7) + 1;
@@ -568,15 +574,6 @@ $(function() {
   }
 });
 </script>
-		<br><br><br><br><br><br>
-	</div>
-	<div class="rightPatient">
-		<h2> Available Times </h2>
-		<br>
-		< Insert Available Times >
-		<br>
-		<button ng-click="" class="pure-button pure-button-primary">Select</button>
-	</div>
-</div>
+
 </body>
 </html>
