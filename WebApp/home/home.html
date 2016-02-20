@@ -10,6 +10,19 @@
 <link href="../style.css" type="text/css" rel="StyleSheet">
 </head>
 <body ng-controller="homeCtrl">
-
+	<script>
+		if (!sessionStorage['dat'])
+		{
+			window.location.href = "../login/login.html";
+		}
+	</script>
+	<div class="container" ng-hide="isNew">
+		<!-- FORM GOES HERE -->
+		<p>Hello Patient</p>
+	</div>
+	<div class="container" ng-hide="!isNew">
+		<!-- Doctors schedule goes here -->
+		<p>Please start with your schedule.</p>
+	</div>
  </body>
  </html>
