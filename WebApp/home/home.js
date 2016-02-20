@@ -36,7 +36,7 @@ app.controller("homeCtrl", ["$scope", "Auth",
 		    userInfo.push(childData);
 		  });
 			$scope.isNew = userInfo[0];
-			$scope.type = userInfo[2];
+			$scope.type = userInfo[2]; 
 		}, function (errorObject) {
 			console.log("The read failed: " + errorObject.code);
 		});
