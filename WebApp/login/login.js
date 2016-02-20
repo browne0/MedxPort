@@ -5,27 +5,41 @@ app.factory("Auth", ["$firebaseAuth",
 		var ref = new Firebase("https://medxport.firebaseio.com");
 		return $firebaseAuth(ref);
 	}
-]);
+	]);
 
 app.controller("LoginCtrl", ["$scope", "Auth", function($scope, Auth) {
 
 	$scope.loginUser = function() {
 		$scope.message = null;
 		$scope.error = null;
-
-		Auth.$authWithPassword({
+		console.log($scope.email);
+		console.log($scope.password);
+		console.log("hello");
+		/*Auth.$authWithPassword({
 			email: $scope.email,
 			password: $scope.password
-		}), function(error, authData) {
-			  	if (error) {
-			  		$scope.error = "Login Failed: " + error;
-			  		console.log("error");
-			  	} else {
-			  		$scope.message = "Authenticated successfully with payload:" + authData;
-			  		console.log("no error");
-			  	}
+		}, function(error, authData) {
+			console.log("works");
+			if (error) {
+				$scope.error = "Login Failed: " + error;
+				console.log("error");
+			} else {
+				$scope.message = "Authenticated successfully with payload:" + authData;
+				console.log("no error");
 			}
-	}
+		});*/
+		var ref = new Firebase("https://medxport.firebaseio.com");
+		ref.authWithPassword({
+		  "email": $scope.email,
+		  "password": $scope.password
+		}, function(error, authData) {
+		  if (error) {
+		    console.log("Login Failed!", error);
+		  } else {
+		    console.log("Authenticated successfully with payload:", authData);
+		  }
+		});
+}
 }]);
 
 // app.config(function($routeProvider) {
@@ -76,7 +90,7 @@ app.controller("LoginCtrl", ["$scope", "Auth", function($scope, Auth) {
 // 			});
 // 		}
 // 	});
-	
+
 // /*  ref.authWithPassword({
 //   	email    : "bobtony@firebase.com",
 //   	password : "correcthorsebatterystaple"
