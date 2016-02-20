@@ -7,13 +7,14 @@ app.factory("Auth", ["$firebaseAuth",
 	}
 	]);
 
-app.controller("homeCtrl", ["$scope", "Auth",
-	function($scope, Auth,userDat) {
+app.controller("homeCtrl", ["$scope", "Auth","$firebaseObject",
+	function($scope, Auth,$firebaseObject) {
 		$scope.userData = data;
 		console.log("here");
 		//This calls the users data for when the come onto the page
 		var ref = new Firebase("https://medxport.firebaseio.com/users/" + data);
 		var userInfo = [];
+
 		ref.on("value", function(snapshot) {
 			snapshot.forEach(function(childSnapshot) {
 		    // key will be "fred" the first time and "barney" the second time
@@ -34,23 +35,14 @@ app.controller("homeCtrl", ["$scope", "Auth",
 		ref = new Firebase("https://medxport.firebaseio.com/Clinics/");
 		$scope.clinics = [];
 		$scope.ids = [];
-		ref.on("value", function(snapshot) {
-			snapshot.forEach(function(childSnapshot) {
-		    // key will be "fred" the first time and "barney" the second time
-		    var key = childSnapshot.key();
-		    // childData will be the actual contents of the child
-		    var childData = childSnapshot.val();
-		    console.log(childData);
-		    $scope.clinics.push(childData.clinicName);
-		});
-			for(key in snapshot.val()){
-				$scope.ids.push(key);
-			}
-			console.log($scope.ids);
-			console.log($scope.clinics);
-		}, function (errorObject) {
-			console.log("The read failed: " + errorObject.code);
-		});
+		//$scope.data = $firebaseObject(ref);
+		$scope.messages = $firebaseArray(ref);
+		console.log($scope.messages);
+		console.log($scope.data);
+		$scope.data.$watch(function () {
+			console.log("data changed");
+		})	
+		
 		var authUrl = new Firebase("https://medxport.firebaseio.com");
 		var e = document.getElementById("clinicSelection");
 		var index = e.selectedIndex;
