@@ -9,32 +9,23 @@ app.factory("Auth", ["$firebaseAuth",
 
 app.controller("LoginCtrl", ["$scope", "Auth", function($scope, Auth) {
 
-	//userlogin scope variables: error, authData
-	$scope.userLogin = {
-		error: null
-	};
-
 	$scope.loginUser = function() {
-		$scope.userLogin.message = null;
-		$scope.userLogin.error = null;
+		$scope.message = null;
+		$scope.error = null;
 
 		Auth.$authWithPassword({
-			email: $scope.userLogin.email,
-			password: $scope.userLogin.password
-		}).then(
-  			function(authData){
-    			$scope.userLogin.authData = authData;
-  			}, 
-			function(error) {
-    			if(error.code == 'INVALID_EMAIL') {
-    				$scope.userLogin.error = "Invalid Email";
-    			} else if(error.code == 'INVALID_PASSWORD') {
-    				$scope.userLogin.error = "Email or Password is incorrect";
-    			} else {
-    				$scope.userLogin.error = "Enter a valid email and password";
-    			}
-  			})
-		}
+			email: $scope.email,
+			password: $scope.password
+		}), function(error, authData) {
+			  	if (error) {
+			  		$scope.error = "Login Failed: " + error;
+			  		console.log("error");
+			  	} else {
+			  		$scope.message = "Authenticated successfully with payload:" + authData;
+			  		console.log("no error");
+			  	}
+			}
+	}
 }]);
 
 // app.config(function($routeProvider) {
