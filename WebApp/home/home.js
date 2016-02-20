@@ -60,13 +60,13 @@ app.controller("homeCtrl", ["$scope", "Auth",
 
 		//the selected option
 		var strUser = e.options[e.selectedIndex].text;
-		console.log(index + " " + strUser);
+		/*console.log(index + " " + strUser);
 		var query = new Firebase("https://medxport.firebaseio.com/Clinics/" + $scope.ids[index] + "/doctorIds"); 
 		query.on("value", function(snapshot) {
 		  console.log(snapshot.val());
 		}, function (errorObject) {
 		  console.log("The read failed: " + errorObject.code);
-		});
+		});*/
 	}
 ]);
 
