@@ -37,6 +37,7 @@ app.controller("LoginCtrl", ["$scope", "Auth", function($scope, Auth) {
 		    console.log("Login Failed!", error);
 		  } else {
 		    console.log("Authenticated successfully with payload:", authData);
+		    location.href='../home/home.html';
 		  }
 		});
 }
