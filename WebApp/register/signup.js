@@ -18,7 +18,9 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 				password: $scope.password
 			}).then(function(userData) {
 				$scope.message = "User created with uid: " + userData.uid;
-				Auth.child("users").child(userData.uid).set({
+				var authUrl = new Firebase("https://medxport.firebaseio.com");
+				var userChild = authUrl.child('users').child(userData.uid);
+				userChild.set({
 					name:{
 						first_name: $scope.first_name,
 						last_name: $scope.last_name
