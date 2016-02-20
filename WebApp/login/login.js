@@ -51,15 +51,12 @@ app.controller("LoginCtrl", ["$scope", "Auth","$rootScope", function($scope, Aut
 		    console.log("Login Failed!", error);
 		  } else {
 		    console.log("Authenticated successfully with payload:", authData);
-<<<<<<< HEAD
 		     dat = authData.uid;
 		     sessionStorage['dat'] = dat;
 		     console.log(dat);
 		     document.cookie = 'username=' +dat;
 		     window.location.href = "../home/home.html";
-=======
-		    location.href='../home/home.html';
->>>>>>> 06b531d54b8e9dcff9818790960deea155349be8
+
 		  }
 		});
 }
