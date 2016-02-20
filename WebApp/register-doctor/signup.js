@@ -90,14 +90,18 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 			
 				ref = new Firebase("https://medxport.firebaseio.com/Clinics/" + $scope.ids[index] +"/doctorIds");
 				 // sync down from server
-				 var list = [];
-				 ref.on('value', function(snap) { list = snap.val(); });
+				
+				 var list = ["1"];
+				 ref.on('value', function(snap) { 
+		
+				 	list = snap.val(); 
+				 });
 				 // time to remove 'bar'!
 				 // this is the correct way to change an array
-				 list.push("hello");
+				 list.push(userData.uid);
 				 ref.set(list);
 					
-					console.log($scope.clinics);
+		
 				}, function (errorObject) {
 					console.log("The read failed: " + errorObject.code);
 				
