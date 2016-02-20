@@ -75,11 +75,11 @@ h2 {
 }
 .leftPatient {
   display:inline-block;
-  width:60%;
+  width:100%;
   background-color: #fafaed;
   overflow: hidden;
 }
-.rightPatient {
+/*.rightPatient {
   display: inline-block;
   width:30%;
   background-color: red;
@@ -88,7 +88,7 @@ h2 {
 .rightPatient button {
   display: block;
   margin: 0 auto;
-}
+}*/
 hr {
     display: block;
     height: 1px;
@@ -97,4 +97,3 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-
