@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<title> MedxPort </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+<script src="signup.js"></script>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<link href="../style.css" type="text/css" rel="StyleSheet">
+</head>
+
+<body>
+	<div class="container">
+	<h1> Reserve an Appointment </h1>
+	<hr>
+	<div class="top">
+		<br>
+		<input type="text" ng-model="hospital" placeholder="Hospital Name">
+		<input type="text" ng-model="department" placeholder="Department">
+		<input type="text" ng-model="docname" placeholder="Doctor Name">
+	</div>
+	<br>
+
+	<div class="leftPatient">
+		<h2>Date:</h2>
+		<br>
+		< Insert Calendar >
+		<br><br><br><br><br><br>
+	</div>
+	<div class="rightPatient">
+		<h2> Available Times </h2>
+		<br>
+		< Insert Available Times >
+		<br>
+		<button ng-click="" class="pure-button pure-button-primary">Select</button>
+	</div>
+</div>
+</body>
+</html>
