@@ -7,23 +7,35 @@ app.factory("Auth", ["$firebaseAuth",
 	}
 ]);
 
-app.controller("RegisterCtrl", ["$scope", "Auth",
-	function($scope, Auth) {
-		$scope.createUser = function() {
-			$scope.message = null;
-			$scope.error = null;
+app.controller("LoginCtrl", ["$scope", "Auth", function($scope, Auth) {
 
-			Auth.$createUser({
-				email: $scope.email,
-				password: $scope.password
-			}).then(function(userData) {
-				$scope.message = "User created with uid: " + userData.uid;
-			}).catch(function(error) {
-				$scope.error = "There was an error creating the user.";
-			});
+	//userlogin scope variables: error, authData
+	$scope.userLogin = {
+		error: null
+	};
+
+	$scope.loginUser = function() {
+		$scope.userLogin.message = null;
+		$scope.userLogin.error = null;
+
+		Auth.$authWithPassword({
+			email: $scope.userLogin.email,
+			password: $scope.userLogin.password
+		}).then(
+  			function(authData){
+    			$scope.userLogin.authData = authData;
+  			}, 
+			function(error) {
+    			if(error.code == 'INVALID_EMAIL') {
+    				$scope.userLogin.error = "Invalid Email";
+    			} else if(error.code == 'INVALID_PASSWORD') {
+    				$scope.userLogin.error = "Email or Password is incorrect";
+    			} else {
+    				$scope.userLogin.error = "Enter a valid email and password";
+    			}
+  			})
 		}
-	}
-]);
+}]);
 
 // app.config(function($routeProvider) {
 // 	$routeProvider.when('/login', {

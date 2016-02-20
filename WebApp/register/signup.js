@@ -19,7 +19,7 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 			}).then(function(userData) {
 				$scope.message = "User created with uid: " + userData.uid;
 			}).catch(function(error) {
-				$scope.error = "There was an error creating the user.";
+				$scope.error = "There was an error creating the user." + error;
 			});
 		}
 	}
