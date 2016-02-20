@@ -70,14 +70,30 @@
 		84F994571C781BFC00809543 /* MedxPort */ = {
 			isa = PBXGroup;
 			children = (
+				84F9946D1C78446000809543 /* View Controllers */,
+				84F9946C1C78445B00809543 /* Models */,
 				84F994581C781BFC00809543 /* AppDelegate.swift */,
 				84F9945C1C781BFC00809543 /* Main.storyboard */,
-				84F9946A1C78209200809543 /* LoginViewController.swift */,
 				84F9945F1C781BFC00809543 /* Assets.xcassets */,
 				84F994611C781BFC00809543 /* LaunchScreen.storyboard */,
 				84F994641C781BFC00809543 /* Info.plist */,
 			);
 			path = MedxPort;
+			sourceTree = "<group>";
+		};
+		84F9946C1C78445B00809543 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		84F9946D1C78446000809543 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84F9946A1C78209200809543 /* LoginViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		C559A934024D59FD33B51F53 /* Frameworks */ = {

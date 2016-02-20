@@ -6,5 +6,6 @@ use_frameworks!
 target 'MedxPort' do
 	pod 'JVFloatLabeledTextField'
 	pod 'AFNetworking'
+	pod 'Firebase', '>= 2.5.0'
 end
 
