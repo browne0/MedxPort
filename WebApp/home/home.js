@@ -41,7 +41,6 @@ app.controller("homeCtrl", ["$scope", "Auth",
 			console.log("The read failed: " + errorObject.code);
 		});
 	}
-	
 ]);
 
 // app.config(function($routeProvider) {

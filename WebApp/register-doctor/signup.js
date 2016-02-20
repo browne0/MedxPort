@@ -77,8 +77,7 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 				var index = e.selectedIndex;
 				var strUser = e.options[e.selectedIndex].text;
 				userChild.set({
-					name:{
-						isNew: true,
+					info:{
 						type: "doctor",
 						first_name: $scope.first_name,
 						last_name: $scope.last_name,

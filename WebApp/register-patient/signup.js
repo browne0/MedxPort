@@ -21,7 +21,7 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 				var authUrl = new Firebase("https://medxport.firebaseio.com");
 				var userChild = authUrl.child('users').child(userData.uid);
 				userChild.set({
-					name:{
+					info:{
 						isNew: true,
 						type: "patient",
 						first_name: $scope.first_name,
