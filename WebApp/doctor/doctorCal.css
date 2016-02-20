@@ -1,24 +1,8 @@
-.checkbox {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #000;
-    text-align: center;
-    font-size: 14px;
-    line-height: 30px;
-    cursor: pointer;
-    margin: 5px;
-    border-radius: 5px;
-    border-width: 3px;
-    font-weight: 700;
-}
-.checkbox.checked {
-    border-color: green;
-}
-.checkbox.unchecked {
-    border-color: red;
-}
-.checkbox.none {
-    border-color: blue;
-    background-color: #eee;
-    color: #777;
+table td {
+  width:100px;
+  height:100px;
+  text-align:center;
+  vertical-align:middle;
+  background-color:#ccc;
+  border:1px solid #fff;
 }
