@@ -9,16 +9,23 @@ app.controller("SampleCtrl", function($scope, $firebaseObject) {
 			console.log("Error creating user:", error);
 		} else {
 			console.log("Successfully created user account with uid:", userData.uid);
+			ref.child("users").child(authData.uid).set({
+				name:{
+					first_name: "hello",
+					last_name: "bob"
+				}
+			});
 		}
 	});
-	ref.authWithPassword({
-		email    : "bobtony@firebase.com",
-		password : "correcthorsebatterystaple"
-	}, function(error, authData) {
-		if (error) {
-			console.log("Login Failed!", error);
-		} else {
-			console.log("Authenticated successfully with payload:", authData);
-		}
-	});
+	
+/*  ref.authWithPassword({
+  	email    : "bobtony@firebase.com",
+  	password : "correcthorsebatterystaple"
+  }, function(error, authData) {
+  	if (error) {
+  		console.log("Login Failed!", error);
+  	} else {
+  		console.log("Authenticated successfully with payload:", authData);
+  	}
+  });*/
 });
