@@ -12,19 +12,20 @@ app.controller("homeCtrl", ["$scope", "Auth",
 		$scope.userData = data;
 		var ref = new Firebase("https://medxport.firebaseio.com/Clinics/");
 		// Attach an asynchronous callback to read the data at our posts reference
-		var clinic = [];
+		var clinics = [];
 		ref.on("value", function(snapshot) {
 			snapshot.forEach(function(childSnapshot) {
 		    // key will be "fred" the first time and "barney" the second time
 		    var key = childSnapshot.key();
 		    // childData will be the actual contents of the child
 		    var childData = childSnapshot.val();
-		    clinic.push(childData.clinicName);
+		    clinics.push(childData.clinicName);
 		  });
-			
+			console.log(clinics)
 		}, function (errorObject) {
 			console.log("The read failed: " + errorObject.code);
 		});
+		$scope.clinics = clinics;
 		ref = new Firebase("https://medxport.firebaseio.com/users/" + data);
 		var userInfo = [];
 		ref.on("value", function(snapshot) {
