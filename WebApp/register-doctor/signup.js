@@ -86,22 +86,13 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
 						clinic: strUser
 					}
 				});
-
-			
-				ref = new Firebase("https://medxport.firebaseio.com/Clinics/" + $scope.ids[index] +"/doctorIds");
-				 // sync down from server
-				
-				 var list = ["1"];
-				 ref.on('value', function(snap) { 
-		
-				 	list = snap.val(); 
-				 });
-				 // time to remove 'bar'!
-				 // this is the correct way to change an array
-				 list.push(userData.uid);
-				 ref.set(list);
+				ref = new Firebase("https://medxport.firebaseio.com/Clinics/" + $scope.ids[index] + "/doctorIds"); 
+				var usersRef = ref;
+				usersRef.update({
+					[Doctorid]: $scope.first_name + " " + $scope.last_name
+				});
 					
-		
+					console.log($scope.clinics);
 				}, function (errorObject) {
 					console.log("The read failed: " + errorObject.code);
 				
