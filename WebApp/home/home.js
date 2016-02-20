@@ -7,8 +7,8 @@ app.factory("Auth", ["$firebaseAuth",
 	}
 	]);
 
-app.controller("homeCtrl", ["$scope", "Auth","$firebaseObject",
-	function($scope, Auth,$firebaseObject) {
+app.controller("homeCtrl", ["$scope", "Auth",
+	function($scope, Auth) {
 		$scope.userData = data;
 		console.log("here");
 		//This calls the users data for when the come onto the page
@@ -32,24 +32,48 @@ app.controller("homeCtrl", ["$scope", "Auth","$firebaseObject",
 		});
 
 		//This pulls clinic data
-		ref = new Firebase("https://medxport.firebaseio.com/Clinics/");
+		/*ref = new Firebase("https://medxport.firebaseio.com/Clinics/");
 		$scope.clinics = [];
 		$scope.ids = [];
 		//$scope.data = $firebaseObject(ref);
-		$scope.messages = $firebaseArray(ref);
+		$scope.messages = $firebaseObject(ref);
 		console.log($scope.messages);
 		console.log($scope.data);
-		$scope.data.$watch(function () {
-			console.log("data changed");
-		})	
-		
-		var authUrl = new Firebase("https://medxport.firebaseio.com");
-		var e = document.getElementById("clinicSelection");
-		var index = e.selectedIndex;
-		
-		//index of selected item
-		var e = document.getElementById("clinicSelection");
-		var index = e.selectedIndex;
+		$scope.$watch($scope.messages,$scope.clinics.push($scope.messages.));	
+		*/
+		ref = new Firebase("https://medxport.firebaseio.com/Clinics/");
+		var clinics = [];
+		var ids = [];
+		ref.on("value", function(snapshot) {
+			snapshot.forEach(function(childSnapshot) {
+		    // key will be "fred" the first time and "barney" the second time
+		    var key = childSnapshot.key();
+		    // childData will be the actual contents of the child
+		    var childData = childSnapshot.val();
+		    console.log(childData);
+		    clinics.push(childData.clinicName);
+		});
+			for(key in snapshot.val()){
+				ids.push(key);
+			}
+
+			var mySelect = $('#clinicSelection');
+			$.each(clinics, function(val, text) {
+			    mySelect.append(
+			        $('<option></option>').val(val).html(text)
+			    );
+			});
+		}, function (errorObject) {
+			console.log("The read failed: " + errorObject.code);
+		});
+			var authUrl = new Firebase("https://medxport.firebaseio.com");
+			var e = document.getElementById("clinicSelection");
+			var index = e.selectedIndex;
+
+			$( "#clinicSelection" ).on( "input", function() {
+			  	console.log( $(this).children().text());
+			});
+
 		/*console.log(index + " " + strUser);
 		var query = new Firebase("https://medxport.firebaseio.com/Clinics/" + $scope.ids[index] + "/doctorIds"); 
 		query.on("value", function(snapshot) {
