@@ -16,21 +16,8 @@
 		window.location.href = "../login/login.html";
 	}
 	</script>
-	<div class="container" ng-hide="isNew">
-		<!-- FORM GOES HERE -->
-		<p>Hello Patient</p>
-		Clinic <select id = "clinicSelection">
-		<option ng-model="clinic" ng-repeat="clinic in clinics">{{ clinic.clinicName }}</option>
-	</select>
-	<br><br>
-
-	Email <br>
-	<input type="text" ng-model="email" placeholder="Email" autocomplete="off"><br>
-	<br>
-</div>
-<!--<div class="container" ng-hide="!isNew">
-	<!-- Doctors schedule goes here 
-	<p>Please start with your schedule.</p>
-</div>-->
+		 <select id = "clinicSelection">
+			<option data-ng-repeat="clinic in clinics">{{ clinic.clinicName }}</option>
+		</select>
 </body>
 </html>

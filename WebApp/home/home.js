@@ -46,19 +46,18 @@ app.controller("homeCtrl", ["$scope", "Auth",
 			for(key in snapshot.val()){
 				$scope.ids.push(key);
 			}
-
 			console.log($scope.ids);
 			console.log($scope.clinics);
 		}, function (errorObject) {
 			console.log("The read failed: " + errorObject.code);
 		});
 		var authUrl = new Firebase("https://medxport.firebaseio.com");
-		
 		var e = document.getElementById("clinicSelection");
+		var index = e.selectedIndex;
+		
 		//index of selected item
 		var e = document.getElementById("clinicSelection");
-				var index = e.selectedIndex;
-				
+		var index = e.selectedIndex;
 		/*console.log(index + " " + strUser);
 		var query = new Firebase("https://medxport.firebaseio.com/Clinics/" + $scope.ids[index] + "/doctorIds"); 
 		query.on("value", function(snapshot) {
