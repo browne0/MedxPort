@@ -45,8 +45,10 @@ app.controller("homeCtrl", ["$scope", "Auth",
 		var clinics = [];
 		var ids = [];
 		var selected;
+		var doctor;
 		var id = 0;
 		var names = [];
+		var namesId = [];
 		ref.on("value", function(snapshot) {
 			snapshot.forEach(function(childSnapshot) {
 		    // key will be "fred" the first time and "barney" the second time
@@ -86,8 +88,9 @@ app.controller("homeCtrl", ["$scope", "Auth",
 			   	console.log(snapshot.val());
 			   	for(var key in snapshot.val()) {
 				  	//gets the first names of doctors
+				  	namesId.push(key);
 				  	names.push(snapshot.val()[key]);
-				  	console.log(names);
+				  	console.log(namesId);
 				  }
 				  var mySelect = $('#doctorSelection');
 				  mySelect.empty();
@@ -96,13 +99,20 @@ app.controller("homeCtrl", ["$scope", "Auth",
 				  		$('<option></option>').val(val).html(text)
 				  		);
 				  });
+
 				}, function (errorObject) {
 					console.log("The read failed: " + errorObject.code);
 				});
 			});
+
 		$('#masterform').submit(function() {
-		    var values = $(this).serialize();
+			doctor = $('#doctorSelection').find(':selected').val();
+		    var values = $(this).serialize() + '&Clinic=' + selected + '&Doctor=' + namesId[doctor];
 		    console.log(values);
+		    var fredNameRef = new Firebase("https://medxport.firebaseio.com/users/" + data + "/form");
+
+			//fredNameRef.update({info:{ isNew: false }});
+			fredNameRef.update(values);
 		});
 	}
 ]);
