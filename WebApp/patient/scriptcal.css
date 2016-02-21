@@ -180,3 +180,7 @@ visibility: none;
 .ui-datepicker-other-month .ui-state-default {
     color: #a8a8a8;
   }
+
+.card1{
+    background-color: green;
+}

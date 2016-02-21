@@ -15,18 +15,14 @@ app.controller("homeCtrl", ["$scope", "Auth",
 		var ref = new Firebase("https://medxport.firebaseio.com/users/" + data);
 		var userInfo = [];
 
-		ref.on("value", function(snapshot) {
-			snapshot.forEach(function(childSnapshot) {
-		    // key will be "fred" the first time and "barney" the second time
-		    var key = childSnapshot.key();
-		    // childData will be the actual contents of the child
-		    var childData = childSnapshot.val();
-		    userInfo.push(childData);
-		});
-			$scope.isNew = userInfo[0].isNew;
-			console.log($scope.isNew);
-			$scope.type = userInfo[0].type;
-			console.log($scope.type); 
+		ref.child("info").on("value", function(snapshot) {
+			$scope.score = snapshot.val();
+			console.log($scope.score.isNew);
+			if(!$scope.score.isNew){
+				window.location.replace("../patient/patientCal.html");
+			}
+			
+
 		}, function (errorObject) {
 			console.log("The read failed: " + errorObject.code);
 		});
@@ -141,6 +137,7 @@ app.controller("homeCtrl", ["$scope", "Auth",
 			fredNameRef.update( {isNew: false} );
 			fredNameRef =new Firebase("https://medxport.firebaseio.com/users/" + $scope.userData + "/form");
 			fredNameRef.set(data);
+			window.location.reload();
 		});
 	}
 ]);

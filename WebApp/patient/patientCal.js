@@ -22,14 +22,16 @@ scheduleApp.controller('calController', function($scope, $firebase,$firebaseObje
 	syncObject.$bindTo($scope, 'days');*/
 	$scope.showSelectedText = function(fromUI) {
 	$scope.date = fromUI;
-	  if(true)
+	if($scope.date==="01/31/2016")
     	fb.$bindTo($scope,"days");
+    else{
+   		$("#timeInfo").hide();
+    }
 	  console.log($scope.date);
     };
 
-  
-	});
-
+	
+});
 /*
   	var schedule = ;
  	log.console("hello");
