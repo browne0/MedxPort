@@ -10,6 +10,9 @@
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link href="../style.css" type="text/css" rel="StyleSheet">
 </head>
+<h1> Edit Info </h1>
+<hr>
+
 <body ng-controller="homeCtrl">
 	<script>
 	if (!sessionStorage['dat'])
@@ -17,64 +20,256 @@
 		window.location.href = "../login/login.html";
 	}
 	</script>
+	<div id="clientinfotop">
+	<form class="pure-form pure-form-stacked" id="masterform">
 	Clinic
+	<br>	
 		 <select id = "clinicSelection">
-			
+		 	<option ></option>
 		</select>
 		<br>
 
-		Doctor
+		Doctor: 
 		<select id = "doctorSelection">
-			
 		</select>
 		<br>
-		Address<input type="text">
+		Address : <input type="text" name="address">
 		<br>
-		City <input type="text">
+		City : <input type="text" name="city">
 		<br>
-		State <input type="text">
+		State : <input type="text" name="state">
 		<br>
-		Zip <input type="text">
+		Zip : <input type="text" name="zip">
 		<br>
-		Home Phone <input type="text">
+		Home Phone : <input type="text" name="phone">
 		<br>
-		Age <input type="text">
+		Age : <input type="text" name="age">
 		<br>
-		Date of Birth <input type="text">
+		Date of Birth : <input type="text" name="dob">
 		<br>
-		Grade <input type="text">
-		<br><br>
+		Grade : <input type="text" name="grade">
+		<br><br> <hr>
 
-		HAVE YOU EVER HAD:
+	</div>
+
+
+
+	<div id ="clientinfobot">
+		<h2>Have you ever had:</h2><br>
+
+
+	Attack of Appendicitis: <label for="a1" class="pure-radio">
+        <input name="appendicitis" type="radio" id="a1" value="no" checked>
+		No
+		</label>
+		<label for="a2" class="pure-radio">
+    	<input name="appendicitis" type="radio" id="a1" value="yes">
+		Yes
+    	</label> <br>
+
+
+		Asthma of Hay Fever:
+		<label for="a1" class="pure-radio">
+        <input name="hayfever" type="radio" id="a2" value="no" checked>
+		No
+		</label>
+		<label for="a2" class="pure-radio">
+    	<input name="hayfever" type="radio" id="a2" value="yes">
+		Yes
+    	</label><br>
+
+		Hernia:
+		<label for="a1" class="pure-radio">
+        <input name="hernia" type="radio" id="a3" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="hernia" type="radio" id="a3" value="yes">
+		Yes
+    	</label><br>
+
+		Rheumatic Fever:
+		<label for="a1" class="pure-radio">
+        <input name="rheumaticfever" type="radio" id="a4" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="rheumaticfever" type="radio" id="a4" value="yes">
+		Yes
+    	</label> <br>
+
+		Diabetes:
+		<label for="a1" class="pure-radio">
+        <input name="diabetes" type="radio" id="a5" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="diabetes" type="radio" id="a5" value="yes">
+		Yes
+    	</label> <br>
+
+		Take Insulin:<label for="a1" class="pure-radio">
+        <input name="insulin" type="radio" id="a6" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="insulin" type="radio" id="a6" value="yes">
+		Yes
+    	</label> <br>
+    	 
+		Poliomyelitis:<label for="a1" class="pure-radio">
+        <input name="poliomyelitis" type="radio" id="a7" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="poliomyelitis" type="radio" id="a7" value="yes">
+		Yes
+    	</label> <br>
+    	 
+		Heart Problems: <label for="a1" class="pure-radio">
+        <input name="heart" type="radio" id="a8" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="heart" type="radio" id="a8" value="yes">
+		Yes
+    	</label> <br>
+    	
+		Severe allergies: <label for="a1" class="pure-radio">
+        <input name="allergies" type="radio" id="a9" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="allergies" type="radio" id="a9" value="yes">
+		Yes
+    	</label> <br>
+    	 
+		Scarlet Fever: <label for="a1" class="pure-radio">
+        <input name="scarletfever" type="radio" id="a10" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="scarletfever" type="radio" id="a10" value="yes">
+		Yes
+    	</label> <br>
+    	
+		Significant disease, or operations: <label for="a1" class="pure-radio">
+        <input name="sigdisop" type="radio" id="a11" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="sigdisop" type="radio" id="a11" value="yes">
+		Yes
+    	</label> <br>
+    </div>
+		<div id="clientinfobot1">
+			<hr style="width:1px;height:200px;margin-left:0px;margin-right:0px; float: left; margin-left: 20px;"/>
+		<h2>Is Activity Restricted: </h2>
 		<br>
-
-		Attack of Appendicitis <input type="checkbox"> <input type="checkbox"> <br>
-		Asthma of Hay Fever <input type="checkbox"> <input type="checkbox"> <br>
-		Hernia <input type="checkbox"> <input type="checkbox"> <br>
-		Rheumatic Fever <input type="checkbox"> <input type="checkbox"> <br>
-		Diabetes <input type="checkbox"> <input type="checkbox"> <br>
-		Take Insulin <input type="checkbox"> <input type="checkbox"> <br>
-		Poliomyelitis <input type="checkbox"> <input type="checkbox"> <br>
-		Heart Problems <input type="checkbox"> <input type="checkbox"> <br>
-		Severe allergies <input type="checkbox"> <input type="checkbox"> <br>
-		Scarlet Fever <input type="checkbox"> <input type="checkbox"> <br>
-		Significant disease, or operations<input type="checkbox"> <input type="checkbox"> <br><br>
-
-		IS ACTIVITY RESTRICTED 
-		<br>
-
-		due to Medical Reasons <input type="checkbox"> <input type="checkbox"> <br>
-		Sinus Trouble <input type="checkbox"> <input type="checkbox"> <br>
-		Fainting Spells <input type="checkbox"> <input type="checkbox"> <br>
-		Ear Infections <input type="checkbox"> <input type="checkbox"> <br>
-		Convulsions <input type="checkbox"> <input type="checkbox"> <br>
-		Poison Ivy <input type="checkbox"> <input type="checkbox"> <br>
-		Allergic to Penicillin <input type="checkbox"> <input type="checkbox"> <br>
-		Nervousness <input type="checkbox"> <input type="checkbox"> <br>
-		Allergy to Aspirin <input type="checkbox"> <input type="checkbox"> <br>
-		Under Medical Care <input type="checkbox"> <input type="checkbox"> <br>
-		Requiring Medication <input type="checkbox"> <input type="checkbox"> <br>
-
+		Due to Medical Reasons: <label for="a1" class="pure-radio">
+        <input name="medreason" type="radio" id="a12" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="medreason" type="radio" id="a12" value="yes">
+		Yes
+    	</label> <br>
+    	 
+		Sinus Trouble: <label for="a1" class="pure-radio">
+        <input name="sinus" type="radio" id="a13" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="sinus" type="radio" id="a13" value="yes">
+		Yes
+    	</label> <br>
+    	 
+		Fainting Spells: <label for="a1" class="pure-radio">
+        <input name="fainting" type="radio" id="a14" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="fainting" type="radio" id="a14" value="yes">
+		Yes
+    	</label> <br>
+    	 
+		Ear Infections: <label for="a1" class="pure-radio">
+        <input name="earinfection" type="radio" id="a15" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="earinfection" type="radio" id="a15" value="yes">
+		Yes
+    	</label> <br>
+    	 
+		Convulsions: <label for="a1" class="pure-radio">
+        <input name="convulsions" type="radio" id="a16" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="convulsions" type="radio" id="a16" value="yes">
+		Yes
+    	</label> <br>
+    	
+		Poison Ivy : <label for="a1" class="pure-radio">
+        <input name="poisionivy" type="radio" id="a17" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="poisionivy" type="radio" id="a17" value="yes">
+		Yes
+    	</label> <br>
+    	
+		Allergic to Penicillin: <label for="a1" class="pure-radio">
+        <input name="penicillin" type="radio" id="a18" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="penicillin" type="radio" id="a18" value="yes">
+		Yes
+    	</label> <br>
+    	
+		Nervousness: <label for="a1" class="pure-radio">
+        <input name="nervousness" type="radio" id="a19" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="nervousness" type="radio" id="a19" value="yes">
+		Yes
+    	</label> <br>
+    	 
+		Allergy to Aspirin: <label for="a1" class="pure-radio">
+        <input name="aspirin" type="radio" id="a20" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="aspirin" type="radio" id="a20" value="yes">
+		Yes
+    	</label> <br>
+    	
+		Under Medical Care: <label for="a1" class="pure-radio">
+        <input name="umc" type="radio" id="a21" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="umc" type="radio" id="a21" value="yes">
+		Yes
+    	</label> <br>
+    	 
+		Requiring Medication: <label for="a1" class="pure-radio">
+        <input name="reqmedication" type="radio" id="a22" value="no" checked>
+		No
+    	</label>
+		<label for="a2" class="pure-radio">
+    	<input name="reqmedication" type="radio" id="a22" value="yes">
+		Yes
+    	</label> <br><br>
+    	</div>
+    	<div align="center">
+    	<input type="submit" id="submit" value="Submit" align="center">
+    </div>
+</form>
+    <br><br><br><br>
 
 
 </body>
