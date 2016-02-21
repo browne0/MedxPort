@@ -17,9 +17,9 @@
 <div id="signup">
 <form class="pure-form pure-form-stacked">
     <fieldset>
-        <legend><h1>Create an Account - Doctor</h1></legend> 
+        <h1>Create an Account - Doctor</h1> <hr>
 
-	<br><br>
+	<br><br><br><br>
 	<div id="signMid" ng-app="medxport" ng-controller="RegisterCtrl">
 	First Name <br>
 	<input type="text" ng-model="first_name" placeholder="First Name" autocomplete="off" >
@@ -29,11 +29,11 @@
 	 <input type="text" ng-model="last_name" placeholder="Last Name" autocomplete="off">
 	<br>
 	<br>
-	Doctor Type <br>
+	Doctor Type : 	
 	<input type="text" id="doctorTypes" ng-model="doctorType" placeholder="Type">
-	<br><br>
 
-	Clinic <select id = "clinicSelection">
+	Clinic : 
+	<select id = "clinicSelection">
 		<option ng-model="clinic" ng-repeat="clinic in clinics">{{ clinic }}</option>
 	</select>
 

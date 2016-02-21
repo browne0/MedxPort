@@ -12,12 +12,11 @@ body {
   width:100%;
   height: 100vh;
   font-family: "AlrightSans-Medium", "Lucida Grande", sans-serif;
-  margin-bottom:10%;
+  /*margin-bottom:10%;*/
 }
 
 .container {
-
-  padding:30px 30px;
+  padding:20px 30px;
   overflow: hidden;
   position:relative;
   width: calc (100% - 60px)
@@ -58,17 +57,18 @@ h2 {
 h3 {
   font-size: 20px;
   text-align: center;
+  color:red;
 }
 #signup {
   text-align: center;
   margin:0 auto;
 }
-#signup input{
+#signup input, #signup select{
   position:center;
  display:inline-block
 }
 #signMid {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   /* bring your own prefixes */
