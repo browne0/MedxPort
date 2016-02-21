@@ -7,5 +7,6 @@ target 'MedxPort' do
 	pod 'JVFloatLabeledTextField'
 	pod 'AFNetworking'
 	pod 'Firebase', '>= 2.5.0'
+	pod 'QRCodeReaderViewController', '~> 4.0.1'
 end
 

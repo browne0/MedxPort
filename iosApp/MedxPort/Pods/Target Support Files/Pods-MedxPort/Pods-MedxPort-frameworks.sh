@@ -87,9 +87,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-MedxPort/AFNetworking.framework"
   install_framework "Pods-MedxPort/Firebase.framework"
   install_framework "Pods-MedxPort/JVFloatLabeledTextField.framework"
+  install_framework "Pods-MedxPort/QRCodeReaderViewController.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-MedxPort/AFNetworking.framework"
   install_framework "Pods-MedxPort/Firebase.framework"
   install_framework "Pods-MedxPort/JVFloatLabeledTextField.framework"
+  install_framework "Pods-MedxPort/QRCodeReaderViewController.framework"
 fi

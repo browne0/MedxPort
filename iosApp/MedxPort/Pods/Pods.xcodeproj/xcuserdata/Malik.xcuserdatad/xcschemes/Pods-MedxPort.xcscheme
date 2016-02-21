@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '63F96EDACE0234E275162463'
+               BlueprintIdentifier = '61CD0D29942E50B54676FCE8'
                BlueprintName = 'Pods-MedxPort'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_MedxPort.framework'>

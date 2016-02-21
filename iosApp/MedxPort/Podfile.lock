@@ -16,15 +16,18 @@ PODS:
     - AFNetworking/NSURLSession
   - Firebase (2.5.1)
   - JVFloatLabeledTextField (1.1.0)
+  - QRCodeReaderViewController (4.0.1)
 
 DEPENDENCIES:
   - AFNetworking
   - Firebase (>= 2.5.0)
   - JVFloatLabeledTextField
+  - QRCodeReaderViewController (~> 4.0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
   JVFloatLabeledTextField: ea4a3d8387ddd43724c472bb2b8ab39b79af05d4
+  QRCodeReaderViewController: 6538745c8f4ffa9407a26bd7f9489ea01739e7b0
 
 COCOAPODS: 0.39.0

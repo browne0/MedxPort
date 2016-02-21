@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4D9C7FBB459C17DF554DAFB5'
-               BlueprintName = 'AFNetworking'
+               BlueprintIdentifier = 'CC581CEC7F6AEF8DF9B715E9'
+               BlueprintName = 'QRCodeReaderViewController'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'AFNetworking.framework'>
+               BuildableName = 'QRCodeReaderViewController.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
