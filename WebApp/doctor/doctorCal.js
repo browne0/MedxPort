@@ -17,20 +17,21 @@ jQuery(document).ready(function() {
 $(function () {
   var isMouseDown = false;
   $("#our_table tr td")
+
     .mousedown(function () {
       isMouseDown = true;
       $(this).toggleClass("highlighted");
       return false; //prevent text selection
     })
+    .mouseup(function () {
+      console.log(0);
+
+      isMouseDown = false;
+    })
     .mouseover(function () {
       if (isMouseDown) {
         $(this).toggleClass("highlighted");
       }
-    });
-
-  $(document)
-    .mouseup(function () {
-      isMouseDown = false;
     });
 });
 
@@ -47,3 +48,12 @@ function left7() {
       document.getElementById("a" + b12).innerHTML = temp1+ 7;
     }
   }
+function menuAppear() {
+
+}
+function toggleGreen(){
+
+}
+function toggleRed(){
+
+}
