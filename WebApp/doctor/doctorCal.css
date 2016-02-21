@@ -1,5 +1,5 @@
 table td {
-  width:100px;
+  width:125px;
   height:50px;
   text-align:center;
   vertical-align:middle;
@@ -9,4 +9,11 @@ table td {
 
 table td.highlighted {
   background-color:#999;
+}
+
+table td.green {
+  background-color: green;
+}
+table td.red {
+  background-color: red;
 }

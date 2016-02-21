@@ -4,13 +4,21 @@
 <head>
 <title> DocSchedule </title>
 <link rel="stylesheet" type="doctorCal/css" href="doctorCal.css"/>
+  <link href="../style.css" type="text/css" rel="StyleSheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
 <script src="doctorCal.js"/> </script>
 </head>
 <body>
-<table cellpadding="0" cellspacing="0" id="our_table">
+<div class="heady"><h1> Doctor's Calendar </h1> </div> <hr>
+<div id="logo1"><img src="../images/logo.jpg"></div>
+
+<div class="container">
+<table cellpadding="0" cellspacing="0" id="doctable">
   <tr>
-    <button id="left" onclick = left7()></button>
+    
+    <th></th>
+    <th><button type="submit" id="left" onclick = "left7()">
+      <img src="../images/left2.jpg" width="20px" height="20px"></button></th>
     <th>Sunday</th>
     <th>Monday</th>
     <th>Tuesday</th>
@@ -18,21 +26,130 @@
     <th>Thursday</th>
     <th>Friday</th>
     <th>Saturday</th>
-    <button id="right" onclick = right7()></button>
+    <th><button type="submit" id="right" onclick = "right7()">
+      <img src="../images/right2.jpg" width="20px" height="20px"></button></th>
   </tr>
-  <tr>
-    <tr id = "row">
-  </tr>
-  <!-- <td id="a1"></td>
-  <td id="a2"></td>
-  <td id="a3"></td>
-  <td id="a4"></td>
-  <td id="a5"></td>
-  <td id="a6"></td>
-  <td id="a7"></td>
-  <td id="a8"></td> -->
 
+  <tr>
+  <th></th>
+  <th></th>
+  <th id="a1">21</th>
+  <th id="a2">22</th>
+  <th id="a3">23</th>
+  <th id="a4">24</th>
+  <th id="a5">25</th>
+  <th id="a6">26</th>
+  <th id="a7">27</th>
+  </tr>
+
+  <tr>
+  <tr><th>8:00-09:00<th>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+
+  <tr>
+  <tr><th>9:00-10:00<th>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+
+  <tr>
+  <tr><th>10:00-11:00<th>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+
+  <tr>
+  <tr><th>11:00-12:00<th>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+
+  <tr>
+  <tr><th>12:00-13:00<th>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+
+  <tr>
+  <tr><th>13:00-14:00<th>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+
+  <tr>
+  <tr><th>14:00-15:00<th>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+
+  <tr>
+  <tr><th>15:00-16:00<th>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+
+  <tr>
+  <tr><th>16:00-17:00<th>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+</div>
+  <div id="docmenu"> <h1>Menu</h1> <hr>
+    <br>
+  <button class="Available"> Available </button>
+  <br><br>
+
+  <button class="Unavailable" >Unavailable </button>
+  <br><br>
+
+</div>
 </table>
 </body>
-
 </html>
