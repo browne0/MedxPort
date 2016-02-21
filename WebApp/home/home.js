@@ -88,104 +88,21 @@ app.controller("homeCtrl", ["$scope", "Auth",
 				  	//gets the first names of doctors
 				  	names.push(snapshot.val()[key]);
 				  	console.log(names);
-				}
-				var mySelect = $('#doctorSelection');
-				mySelect.empty();
-				$.each(names, function(val, text) {
-					mySelect.html(
+				  }
+				  var mySelect = $('#doctorSelection');
+				  mySelect.empty();
+				  $.each(names, function(val, text) {
+				  	mySelect.html(
 				  		$('<option></option>').val(val).html(text)
-				  	);
+				  		);
 				  });
 				}, function (errorObject) {
 					console.log("The read failed: " + errorObject.code);
 				});
 			});
-
-
-
-		}
-		]);
-
-// app.config(function($routeProvider) {
-// 	$routeProvider.when('/login', {
-// 		templateUrl: 'login.html',
-// 		controller: 'LoginCtrl'
-// 	});
-
-// 	$routeProvider.when('/register', {
-// 		templateUrl: 'signup.html',
-// 		controller: 'RegisterCtrl'
-// 	});
-
-// 	$routeProvider.when('/', {
-// 		templateUrl: 'home.html',
-// 		controller: 'HomeCtrl'
-// 	});
-
-// 	$routeProvider.otherwise({ redirectTo: '/' });
-// });
-
-// app.run(function($firebaseObject, $rootScope, $location) {
-// 	$rootScope.$on('$routeChangeStart', function(evt) {
-// 		var ref = Firebase("https://medxport.firebaseio.com");
-// 		if (ref.auth == nil) {
-// 			$location.url('/login');
-// 		}
-
-// 		event.preventDefault();
-// 	});
-// });
-
-// app.controller("SampleCtrl", function($scope, $firebaseObject) {
-// 	var ref = new Firebase("https://medxport.firebaseio.com");
-// 	ref.createUser({
-// 		email    : "bobtony@firebase.com",
-// 		password : "correcthorsebatterystaple"
-// 	}, function(error, userData) {
-// 		if (error) {
-// 			console.log("Error creating user:", error);
-// 		} else {
-// 			console.log("Successfully created user account with uid:", userData.uid);
-// 			ref.child("users").child(userData.uid).set({
-// 				name:{
-// 					first_name: "hello",
-// 					last_name: "bob"
-// 				}
-// 			});
-// 		}
-// 	});
-
-// /*  ref.authWithPassword({
-//   	email    : "bobtony@firebase.com",
-//   	password : "correcthorsebatterystaple"
-//   }, function(error, authData) {
-//   	if (error) {
-//   		console.log("Login Failed!", error);
-//   	} else {
-//   		console.log("Authenticated successfully with payload:", authData);
-//   	}
-//   });*/
-// });
-
-// app.controller('mainCtrl',  function($scope, $firebaseObject) {
-// 	$scope.templates = 
-// 	[
-// 		{ url: 'login.html' },
-// 		{ url: 'home.html' }
-// 	];
-
-// 	$scope.template = $scope.template[0];
-// 	var ref = new Firebase("https://medxport.firebaseio.com");
-// 	ref.authWithPassword({
-// 		email    : "bobtony@firebase.com",
-//   		password : "correcthorsebatterystaple"
-// 	}, function(error, authData) {
-// 	if (error) {
-//     	console.log("Login Failed!", error);
-//   	} else {
-//     console.log("Authenticated successfully with payload:", authData);
-// 	}
-// 	});
-
-// });
-
+		$('#masterform').submit(function() {
+		    var values = $(this).serialize();
+		    console.log(values);
+		});
+	}
+]);
