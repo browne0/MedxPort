@@ -91,7 +91,7 @@
     left: 0;
     padding-left: 0;
     position: absolute;
-    background-image: url(left2.jpg);
+    background-image: url(../images/left2.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     /*background-color: black;*/
@@ -105,7 +105,7 @@
     right: 0;
     padding-right: 0;
     position:absolute;
-    background-image: url(right2.jpg);
+    background-image: url(../images/right2.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     /*background-color: black;*/
