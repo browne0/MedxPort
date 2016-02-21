@@ -17,12 +17,12 @@ app.controller("homeCtrl", ["$scope", "Auth",
 
 		ref.child("info").on("value", function(snapshot) {
 			$scope.score = snapshot.val();
-			console.log($scope.score.isNew);
-			if(!$scope.score.isNew){
+			console.log($scope.score);
+			if($scope.score.type === "doctor"){
+				window.location.replace("../doctor/doctorCal.html");
+			}else if(!$scope.score.isNew){
 				window.location.replace("../patient/patientCal.html");
 			}
-			
-
 		}, function (errorObject) {
 			console.log("The read failed: " + errorObject.code);
 		});
