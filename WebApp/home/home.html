@@ -9,17 +9,18 @@
 	<script src="home.js"></script>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link href="../style.css" type="text/css" rel="StyleSheet">
+	<script>
+	$(window).load(function() {
+		if (!sessionStorage['dat']) {
+			window.location.href = "../login/login.html";
+		}	
+	});
+	</script>
 </head>
 <h1> Edit Info </h1>
 <hr>
 
 <body ng-controller="homeCtrl">
-	<script>
-	if (!sessionStorage['dat'])
-	{
-		window.location.href = "../login/login.html";
-	}
-	</script>
 	<div id="clientinfotop">
 	<form class="pure-form pure-form-stacked" id="masterform">
 	Clinic
