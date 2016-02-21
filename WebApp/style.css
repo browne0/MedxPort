@@ -12,7 +12,7 @@ body {
   width:100%;
   height: 100vh;
   font-family: "AlrightSans-Medium", "Lucida Grande", sans-serif;
-
+  margin-bottom:10%;
 }
 
 .container {
@@ -73,7 +73,7 @@ h3 {
   transform: translate(-50%, -50%);
 }
 .top {
-  width:100%;
+  width:80%;
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
@@ -109,4 +109,24 @@ hr {
 
 .hasDatepicker {
   width: 100%;
+}
+#clientinfotop {
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+}
+#clientinfotop input, #clientinfotop select{
+  position:center;
+ display:inline-block
+}
+#clientinfobot {
+  margin-left: 20%;
+  display: inline-block;
+  width:30%;
+}
+#clientinfobot1 {
+  margin-left: 0%;
+  display: inline-block;
+  width:40%;
+  vertical-align: top;
 }
