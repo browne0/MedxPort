@@ -4,15 +4,21 @@
 <head>
 <title> DocSchedule </title>
 <link rel="stylesheet" type="doctorCal/css" href="doctorCal.css"/>
+  <link href="../style.css" type="text/css" rel="StyleSheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
 <script src="doctorCal.js"/> </script>
 </head>
 <body>
-<table cellpadding="0" cellspacing="0" id="our_table">
+<div class="heady"><h1> Doctor's Calendar </h1> </div> <hr>
+<div id="logo1"><img src="../images/logo.jpg"></div>
+
+<div class="container">
+<table cellpadding="0" cellspacing="0" id="doctable">
   <tr>
-    <button id="left" onclick = "left7()"></button>
+    
     <th></th>
-    <th></th>
+    <th><button type="submit" id="left" onclick = "left7()">
+      <img src="../images/left2.jpg" width="20px" height="20px"></button></th>
     <th>Sunday</th>
     <th>Monday</th>
     <th>Tuesday</th>
@@ -20,7 +26,8 @@
     <th>Thursday</th>
     <th>Friday</th>
     <th>Saturday</th>
-    <button id="right" onclick = "right7()"></button>
+    <th><button type="submit" id="right" onclick = "right7()">
+      <img src="../images/right2.jpg" width="20px" height="20px"></button></th>
   </tr>
 
   <tr>
@@ -133,8 +140,16 @@
   <td></td>
   <td></td>
   </tr>
-<a href="#" class="myButton">green</a>
+</div>
+  <div id="docmenu"> <h1>Menu</h1> <hr>
+    <br>
+  <button value="Available" onclick="green(hl)">Available </button>
+  <br><br>
 
+  <button value="Unavailable" onclick="red(hl)">Unavailable </button>
+  <br><br>
+
+</div>
 </table>
 </body>
 </html>

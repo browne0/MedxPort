@@ -16,15 +16,25 @@ jQuery(document).ready(function() {
 
 $(function () {
   var isMouseDown = false;
-  $("#our_table tr td")
+  $("#doctable tr td")
 
     .mousedown(function () {
       isMouseDown = true;
-      $(this).toggleClass("highlighted");
+
+         // $(this).toggleClass("red");
+         var hl = $("highlighted");
+         // hl.id = "ghl";
+
+
+
       return false; //prevent text selection
     })
+
     .mouseup(function () {
       console.log(0);
+      var show = document.getElementById("docmenu");
+      show.style.visibility = "visible";
+
 
       isMouseDown = false;
     })
@@ -48,12 +58,13 @@ function left7() {
       document.getElementById("a" + b12).innerHTML = temp1+ 7;
     }
   }
-function menuAppear() {
+function green(changeGreen){
+
+  // document.getElementById("ghl").bgcolor = "#7FFF00";
+  changeGreen.classList.toggle("green");
 
 }
-function toggleGreen(){
-
-}
-function toggleRed(){
+function red(changeRed){
+  changeRed.classList.toggle("red");
 
 }
