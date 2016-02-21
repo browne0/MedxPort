@@ -34,7 +34,6 @@
                                         </state>
                                         <connections>
                                             <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7sj-RC-e5a"/>
-                                            <segue destination="Z61-z9-n9W" kind="modal" identifier="loginSegue" id="pTp-NV-hns"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -70,9 +69,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeS-8J-quF">
                                         <rect key="frame" x="73" y="37" width="175" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Sign up on our website"/>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Med" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wp-MK-WP0">
                                 <rect key="frame" x="94" y="117" width="60" height="36"/>
@@ -101,6 +102,7 @@
                         <outlet property="passwordLabel" destination="jGp-JD-SJI" id="X1v-rU-MtN"/>
                         <outlet property="signInButton" destination="pIO-4R-uXq" id="0wG-jk-xi9"/>
                         <outlet property="usernameLabel" destination="RlP-jc-YsU" id="MVJ-4J-g7t"/>
+                        <segue destination="Z61-z9-n9W" kind="modal" identifier="loginSegue" id="p2S-np-duc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -131,6 +133,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z61-z9-n9W" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="jtz-Ta-8sR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oFG-T6-81o">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

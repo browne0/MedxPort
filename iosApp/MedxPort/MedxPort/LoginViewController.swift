@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
         signInButton.layer.shadowOpacity = 1.0
         signInButton.layer.shadowRadius = 1.0
         
-        footerView.backgroundColor=UIColor.lightGrayColor().colorWithAlphaComponent(0.25)
+        footerView.backgroundColor=UIColor.lightGrayColor().colorWithAlphaComponent(0.30)
         
         let border = CALayer()
         let width = CGFloat(1.0)
@@ -94,10 +94,11 @@ class LoginViewController: UIViewController {
                         self.errorLabel.alpha = 1.0
                     })
                     print(error)
+                    
                 } else {
                     // We are now logged in
                     print("successful login")
-                    self.performSegueWithIdentifier("loginSegue", sender: sender)
+                    self.performSegueWithIdentifier("loginSegue", sender: authData)
                 }
         })
     }
