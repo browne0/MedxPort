@@ -86,7 +86,6 @@ body {
 
 .login-card a {
   text-decoration: none;
-  color: #666;
   font-weight: 400;
   text-align: center;
   display: inline-block;
@@ -102,4 +101,31 @@ body {
   width: 100%;
   text-align: center;
   font-size: 12px;
+}
+
+.doctors {
+  display: inline-block;
+  padding: 15px;
+  font-size: 18px;
+  background-color: #f25854;
+  width: 75px;
+  text-align: center;
+  color: white;
+}
+
+.patients {
+  display: inline-block;
+  padding: 15px;
+  font-size:18px;
+  background-color: #f25854;
+  width: 75px;
+  text-align: center;
+  float:right;
+  color: white;
+}
+
+.doctors a, .patients a, .doctors a:visited, .patients a:visited {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
 }
