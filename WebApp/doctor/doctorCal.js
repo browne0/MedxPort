@@ -12,7 +12,7 @@ jQuery(document).ready(function() {
   });
   $('#row').append(elements);
 });
-var color = "red";
+var color = "gray";
 $(function () {
   var isMouseDown = false;
   $("#doctable tr td")
@@ -37,13 +37,13 @@ $(function () {
     $(document)
     .mouseup(function () {
       // console.log(0);
-      var show = document.getElementById("docmenu");
-      show.style.visibility = "visible";
-
-      var all = $("highlighted").map(function() {
-            return this.innerHTML;
-        }).get();
-        console.log(all);
+      // var show = document.getElementById("docmenu");
+      // show.style.visibility = "visible";
+      //
+      // var all = $("highlighted").map(function() {
+      //       return this.innerHTML;
+      //   }).get();
+      //   console.log(all);
       isMouseDown = false;
     })
 
@@ -64,8 +64,10 @@ function left7() {
   }
 function green(){
   color = "green";
-
 }
 function red(){
   color = "red";
+}
+function gray(){
+  window.location.reload();
 }
