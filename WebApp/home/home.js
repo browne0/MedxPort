@@ -105,14 +105,46 @@ app.controller("homeCtrl", ["$scope", "Auth",
 				});
 			});
 
-		$('#masterform').submit(function() {
-			doctor = $('#doctorSelection').find(':selected').val();
-		    var values = $(this).serialize() + '&Clinic=' + selected + '&Doctor=' + namesId[doctor];
-		    console.log(values);
-		    var fredNameRef = new Firebase("https://medxport.firebaseio.com/users/" + data + "/form");
 
-			//fredNameRef.update({info:{ isNew: false }});
-			fredNameRef.update(values);
+    
+    
+    
+
+		$('#masterform').submit(function(e) {
+			doctor = $('#doctorSelection').find(':selected').val();
+			e.preventDefault();
+			(function ($) {
+			    $.fn.serializeFormJSON = function () {
+
+			        var o = {};
+			        var a = this.serializeArray();
+			        a.push({name: 'Clinic', value: selected});
+			        a.push({name: 'Doctor', value: namesId[doctor]});
+			        console.log(a);
+			        $.each(a, function () {
+			            if (o[this.name]) {
+			                if (!o[this.name].push) {
+			                    o[this.name] = [o[this.name]];
+			                }
+			                o[this.name].push(this.value || '');
+			            } else {
+			                o[this.name] = this.value || '';
+			            }
+			        });
+			        return o /*+ JSON.stringify({ Clinic: selected, Doctor: namesId[doctor] }); */
+			    };
+			})(jQuery);
+			
+		    var data = $(this).serializeFormJSON() ;
+			console.log(data);
+		    var fredNameRef = new Firebase("https://medxport.firebaseio.com/users/" + $scope.userData);
+			fredNameRef.update({info:{ isNew: false }});
+			fredNameRef =new Firebase("https://medxport.firebaseio.com/users/" + $scope.userData + "/form");
+			fredNameRef.set(values);
 		});
+
+
+
+
 	}
 ]);
