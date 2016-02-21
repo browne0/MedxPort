@@ -82,25 +82,31 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onLogin(sender: AnyObject) {
-        let username = usernameLabel.text
+        let email = usernameLabel.text
         let password = passwordLabel.text
         
-        let ref = Firebase(url: firebaseUrl)
-        ref.authUser(username, password: password,
-            withCompletionBlock: { error, authData in
+        if email != "" && password != "" {
+            DataService.dataService.BASE_REF.authUser(email, password: password, withCompletionBlock: { error, authData in
                 if error != nil {
-                    // There was an error logging in to this account
+                    print(error)
                     UIView.animateWithDuration(0.3, animations: {
                         self.errorLabel.alpha = 1.0
                     })
-                    print(error)
-                    
                 } else {
-                    // We are now logged in
-                    print("successful login")
-                    self.performSegueWithIdentifier("loginSegue", sender: authData)
+                    // make sure the correct uid is stored
+                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                    
+                    // perform segue to enter app
+                    self.performSegueWithIdentifier("loginSegue", sender: nil)
                 }
-        })
+            })
+        } else {
+            // there was a problem with the login
+            UIView.animateWithDuration(0.3, animations: {
+            self.errorLabel.text = "Don't forget to enter your email and password!"
+            self.errorLabel.alpha = 1.0
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,6 +114,15 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+         // If we have the uid stored, the user is already logger in - no need to sign in again!
+        
+        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
+            self.performSegueWithIdentifier("loginSegue", sender: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation
