@@ -48,6 +48,7 @@ h1 {
   font-size: 24px;
   text-align: center;
   font-weight: bold;
+  margin: 20px;
 }
 h2 {
   font-size: 20px;
@@ -127,6 +128,9 @@ hr {
 #clientinfobot1 {
   margin-left: 0%;
   display: inline-block;
-  width:40%;
+  width:30%;
   vertical-align: top;
+}
+.pure-radio {
+  float: right;
 }

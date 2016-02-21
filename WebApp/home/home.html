@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link href="../style.css" type="text/css" rel="StyleSheet">
 </head>
+<h1> Edit Info </h1>
+<hr>
 
 <body ng-controller="homeCtrl">
 	<script>
@@ -18,9 +20,9 @@
 		window.location.href = "../login/login.html";
 	}
 	</script>
-
 	<div id="clientinfotop">
 	<form class="pure-form pure-form-stacked">
+		<form id="bigform">
 	Clinic
 	<br>	
 
@@ -164,6 +166,7 @@
     	</label> <br>
     </div>
 		<div id="clientinfobot1">
+			<hr style="width:1px;height:200px;margin-left:0px;margin-right:0px; float: left; margin-left: 20px;"/>
 		<h2>Is Activity Restricted: </h2>
 		<br>
 		Due to Medical Reasons: <label for="a1" class="pure-radio">
@@ -268,6 +271,7 @@
     	<div align="center">
     	<input type="submit" id="submit" value="Submit" align="center">
     </div>
+</form>
     <br><br><br><br>
 
 
