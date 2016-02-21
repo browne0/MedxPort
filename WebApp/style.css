@@ -16,8 +16,7 @@ body {
 }
 
 .container {
-
-  padding:30px 30px;
+  padding:20px 30px;
   overflow: hidden;
   position:relative;
   width: calc (100% - 60px)
@@ -63,13 +62,13 @@ h3 {
   text-align: center;
   margin:0 auto;
 }
-#signup input{
+#signup input, #signup select{
   position:center;
  display:inline-block
 }
 #signMid {
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  top: 60%;
   left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
