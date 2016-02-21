@@ -89,7 +89,7 @@ h1 {
   font-weight: 100;
   font-size: 2.3em;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  
+
 }
 h2 {
   font-size: 20px;
@@ -171,6 +171,26 @@ hr {
 .pure-radio {
   float: right;
 }
+#left, #right {
+  display: inline-block;
+}
+#doctable {
+  width:70%;
+}
+#docmenu {
+  text-align: center;
+  display: inline-block;
+  float:right;
+  margin: 0 auto;
+  visibility: hidden;
+}
+.green {
+  background-color: green;
+}
+.red {
+  background-color: red;
+}
+
 @media screen and (max-width:705px) {
   #logo1, #logo1 img{
     display:none;
