@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="schedule">
 <head>
 <title> MedxPort </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<script src="patientCal.js"></script>
+
 <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
 
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 <link href="../style.css" type="text/css" rel="StyleSheet">
 <link href="scriptcal.css" type="text/css" rel="StyleSheet">
 
 </head>
 
-<body>
+<body  ng-controller="calController">
 	<div class="heady">
 	<h1> Reserve an Appointment </h1> <hr>
 </div>
@@ -30,30 +33,54 @@
 	</div>
 
 	<div class="rightPatient">
-		<h3> Available Times </h3>
+		 <div class="col-xs-4 text-center" ng-repeat="day in days">
+            
+            <h2>{{day.timeStart}}</h2>
+            <h2>{{day.timeEnd}}</h2>
+		   
+		    
+		    <!-- <div class="time-slot" ng-repeat="slot in day.slots">     
+
+		      <input type="checkbox" id="{{ day.name }}-{{ $index }}" ng-model="slot.booked" ng-disabled="slot.booked">
+
+		      <label for="{{ day.name }}-{{ $index }}">{{ slot.time }}<br>
+		        <span ng-if="slot.booked">Booked</span>
+		        <span ng-if="!slot.booked">Available</span>
+		      </label>
+
+		    </div> -->
+		  </div>       
+
 		<h3 id="forDate"></h3>
 		 <hr>
 		<br>
 
 		<br>
-		<button ng-click="" class="pure-button pure-button-primary">Select</button>
+		<button ng-click = "" class="pure-button pure-button-primary">Select</button>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="jquery-ui-datepicker.min.js"></script>
 <script>
-    $('#calendar').datepicker({
+	$('#calendar').datepicker({
         inline: true,
         firstDay: 1,
         showOtherMonths: true,
         dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     });
 
-    $(document).on("change", "#calendar", function () {
-    	$("#forDate").text("for " + $(this).val());
-         // alert($(this).val())
-
-    })
 </script>
+<div id="demoElement">
+
+<script>
+	
+    $(document).on("change","#calendar", function () {
+    	//console.log('log',$(this).val())
+    	angular.element(document.getElementById('demoElement')).scope().showSelectedText($(this).val());
+    	//$scope.selection.date = $(this).val();
+	});
+    
+</script>
+</div>
 
 	</div>
 </div>
