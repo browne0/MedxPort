@@ -11,8 +11,6 @@
 <link href="../style.css" type="text/css" rel="StyleSheet">
 <link href="scriptcal.css" type="text/css" rel="StyleSheet">
 
-<script src="script.js"></script>
-
 </head>
 
 <body>
@@ -32,7 +30,9 @@
 	</div>
 
 	<div class="rightPatient">
-		<h3> Available Times </h3> <hr>
+		<h3> Available Times </h3>
+		<h3 id="forDate"></h3>
+		 <hr>
 		<br>
 		< Insert Available Times >
 		<br>
@@ -47,6 +47,12 @@
         showOtherMonths: true,
         dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     });
+
+    $(document).on("change", "#calendar", function () {
+    	$("#forDate").text("for " + $(this).val());
+         // alert($(this).val())
+
+    })
 </script>
 
 	</div>
