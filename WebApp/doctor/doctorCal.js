@@ -1,6 +1,5 @@
 jQuery(document).ready(function() {
   var days = new Array(31);
-
   for (i=0;i<days.length;i++)
   {
     days[i] = (i+1).toString();
@@ -13,17 +12,14 @@ jQuery(document).ready(function() {
   });
   $('#row').append(elements);
 });
-
-
+var color = "red";
 $(function () {
   var isMouseDown = false;
   $("#doctable tr td")
-
     .mousedown(function () {
       isMouseDown = true;
-
-         // $(this).toggleClass("red");
-         var hl = $("highlighted");
+         $(this).toggleClass(color);
+         //var hl = $(color);
          // hl.id = "ghl";
 
       //  $("Available").click(function(){
@@ -32,9 +28,15 @@ $(function () {
 
       return false; //prevent text selection
     })
+    .mouseover(function () {
+      if (isMouseDown) {
+        $(this).toggleClass(color);
+      }
+    });
 
+    $(document)
     .mouseup(function () {
-      console.log(0);
+      // console.log(0);
       var show = document.getElementById("docmenu");
       show.style.visibility = "visible";
 
@@ -42,16 +44,9 @@ $(function () {
             return this.innerHTML;
         }).get();
         console.log(all);
-
       isMouseDown = false;
     })
-    .mouseover(function () {
-      if (isMouseDown) {
-        $(this).toggleClass("highlighted");
-      }
 
-    });
-   
 });
 
 function left7() {
@@ -62,18 +57,15 @@ function left7() {
 }
 
   function right7() {
-    for(var b12 = 1; b12 <= 7; b12++) { 
+    for(var b12 = 1; b12 <= 7; b12++) {
       var temp1 = parseInt(document.getElementById("a" + b12).innerHTML);
       document.getElementById("a" + b12).innerHTML = temp1+ 7;
     }
   }
-// function green(changeGreen){
+function green(){
+  color = "green";
 
-//   // document.getElementById("ghl").bgcolor = "#7FFF00";
-//   changeGreen.classList.toggle("green");
-
-// }
-// function red(changeRed){
-//   changeRed.classList.toggle("red");
-
-// }
+}
+function red(){
+  color = "red";
+}
