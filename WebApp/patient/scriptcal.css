@@ -30,7 +30,7 @@
     -moz-box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);
     box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);
 
-    padding:20px 20px 20px 0px;
+    padding:2% 2% 2% 0;
     height:410px;
     overflow: hidden;
 }
@@ -47,7 +47,8 @@
 /* Month */
 .ui-datepicker-month {
     position: relative;
-    padding-right: 15px;
+    padding-left:15px;
+
     /*color: #565656;*/
 }
 
@@ -83,20 +84,21 @@
 .ui-datepicker-prev,
 .ui-datepicker-next {
     position: absolute;
-    top: -2px;
     padding: 5px;
     cursor: pointer;
 }
 
 .ui-datepicker-prev {
-    left: 5;
+    left: 0;
     padding-left: 0;
     position: absolute;
-    background-image: url(left.jpg);
-    background-color: white;
-    opacity: 2;
-    width:10%;
-    height:3%;
+    background-image: url(left2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*background-color: black;*/
+
+    width:35px;
+    height:50px;
 
 }
 
@@ -104,11 +106,13 @@
     right: 0;
     padding-right: 0;
     position:absolute;
-    background-image: url(right.jpg);
-    background-color: white;
-    opacity:2;
-    width:10%;
-    height:3%;
+    background-image: url(right2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*background-color: black;*/
+
+    width:35px;
+    height:50px;
 }
 
 .ui-datepicker-prev span,
