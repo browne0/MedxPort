@@ -8,30 +8,28 @@
 <script src="signup.js"></script>
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 <link href="../style.css" type="text/css" rel="StyleSheet">
+<link href="../signup.css" type="text/css" rel="StyleSheet">
+
 </head>
 
 <body>
-<div id="signup">
 <form class="pure-form pure-form-stacked">
-    <fieldset>
-        <h1>Create an Account - Patient</h1> <hr>
+<div class="heady">
+<h1>Create an Account - Patient</h1> <hr>
+    </div>
 
-<div id="signMid" ng-app="medxport" ng-controller="RegisterCtrl">
+
+<div class="card2" ng-app="medxport" ng-controller="RegisterCtrl">
 	First Name <br>
 	<input type="text" ng-model="first_name" placeholder="First Name">
-	<br>
-	<br>
+
 	Last Name <br>
 	 <input type="text" ng-model="last_name" placeholder="Last Name">
-	<br>
-	<br>
+
 	Email <br>
-	<input type="text" ng-model="email" placeholder="Email"><br>
-	<br>
+	<input type="text" ng-model="email" placeholder="Email">
 	Password <br>
 	<input type="password" ng-model="password" placeholder="Password">
-
-	<br><br>
 
 	<button type="button" ng-click="createUser()" class="pure-button pure-button-primary">Create User</button>
 
@@ -40,9 +38,9 @@
 
 	<a href="../login/login.html" class="pure-button pure-button-secondary">Go to Login Page</a>
 </div>
-</fieldset>
+
 </form>
-</div>	
+
 
 </body>
 </html>

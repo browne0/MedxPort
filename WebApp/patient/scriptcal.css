@@ -16,12 +16,9 @@
     width: calc(100%- 40px);
     cursor: default;
 
-
-    font-family: Tahoma;
+    /*font-family: Tahoma;*/
     font-size: 150%;
-
     background: #fafaed;    
-
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -31,11 +28,9 @@
     box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);
 
     padding:2% 2% 2% 0;
-<<<<<<< HEAD
-    height:auto;
-=======
+
     height:450px;
->>>>>>> a08156abea0195319f41f357b471aac431086b16
+
     overflow: hidden;
 }
 

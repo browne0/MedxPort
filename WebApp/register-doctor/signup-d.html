@@ -11,41 +11,38 @@
 <script src="signup.js"></script>
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 <link href="../style.css" type="text/css" rel="StyleSheet">
+<link href="../signup.css" type="text/css" rel="StyleSheet">
+
 </head>
 
 <body>
-<div id="signup">
-<form class="pure-form pure-form-stacked">
-    <fieldset>
-        <h1>Create an Account - Doctor</h1> <hr>
 
-	<br><br><br><br>
-	<div id="signMid" ng-app="medxport" ng-controller="RegisterCtrl">
+<form class="pure-form pure-form-stacked">
+
+    	<div class="heady">
+        <h1>Create an Account - Doctor</h1> <hr>
+    </div>
+
+	<div class="card" ng-app="medxport" ng-controller="RegisterCtrl">
 	First Name <br>
 	<input type="text" ng-model="first_name" placeholder="First Name" autocomplete="off" >
-	<br>
-	<br>
+	
 	Last Name <br>
 	 <input type="text" ng-model="last_name" placeholder="Last Name" autocomplete="off">
-	<br>
-	<br>
-	Doctor Type : 	
+	
+	Doctor Type
 	<input type="text" id="doctorTypes" ng-model="doctorType" placeholder="Type">
 
-	Clinic : 
+	Clinic
 	<select id = "clinicSelection">
 		<option ng-model="clinic" ng-repeat="clinic in clinics">{{ clinic }}</option>
 	</select>
 
-	<br><br>
-
 	Email <br>
-	<input type="text" ng-model="email" placeholder="Email" autocomplete="off"><br>
-	<br>
+	<input type="text" ng-model="email" placeholder="Email" autocomplete="off">
+
 	Password <br>
 	<input type="password" ng-model="password" placeholder="Password" autocomplete="off">
-
-	<br><br>
 
 	<button type="button" ng-click="createUser()" class="pure-button pure-button-primary">Create User</button>
 
@@ -54,3 +51,6 @@
 
 	<a href="../login/login.html" class="pure-button pure-button-secondary">Go to Login Page</a>
 </div>
+</form>
+</body>
+</html>

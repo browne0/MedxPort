@@ -14,16 +14,21 @@ body {
   font-family: "AlrightSans-Medium", "Lucida Grande", sans-serif;
   /*margin-bottom:10%;*/
 }
-
+.heady {
+  display: inline-block;
+  width: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 20px;
+}
 .container {
-  padding:20px 30px;
+  padding:0px 30px;
   overflow: hidden;
   position:relative;
-  width: calc (100% - 60px)
-  margin: auto;
+  width: calc (100% - 60px);
+  margin:0 auto;
 }
 .login-card {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   /* bring your own prefixes */
@@ -31,24 +36,39 @@ body {
   width:60%;
   max-width:300px;
     border-radius: 25px;
-    text-align: center
-   	font-family: Georgia;
+    text-align: center;
+
 	font-size: 15pt;
 	background-color: #f8f8e6
+}
+.card, .card2 {
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  width:60%;
+  max-width:300px;
+    border-radius: 25px;
+    text-align: center;
+
+  font-size: 15pt;
+  background-color: #f8f8e6
+}
+.card2 {
+top:55%;
 }
 
 #login input {
     clear:both;
     float:right;
-
 	margin: 0px 30px 0px 0px;
 }
 h1 {
-  font-size: 24px;
   text-align: center;
-  font-weight: bold;
-  margin: 20px;
   color:red;
+  font-weight: 100;
+  font-size: 2.3em;
 }
 h2 {
   font-size: 20px;
@@ -59,21 +79,7 @@ h3 {
   text-align: center;
   color:red;
 }
-#signup {
-  text-align: center;
-  margin:0 auto;
-}
-#signup input, #signup select{
-  position:center;
- display:inline-block
-}
-#signMid {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-}
+
 .top {
   width:80%;
   display: flex;
@@ -100,6 +106,9 @@ h3 {
   display: block;
   margin: 0 auto;
 }
+select {
+  width:100%;
+  }
 hr {
     display: block;
     height: 1px;
