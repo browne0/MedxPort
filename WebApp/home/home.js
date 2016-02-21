@@ -137,14 +137,10 @@ app.controller("homeCtrl", ["$scope", "Auth",
 			
 		    var data = $(this).serializeFormJSON() ;
 			console.log(data);
-		    var fredNameRef = new Firebase("https://medxport.firebaseio.com/users/" + $scope.userData);
-			fredNameRef.update({info:{ isNew: false }});
+		    var fredNameRef = new Firebase("https://medxport.firebaseio.com/users/" + $scope.userData+ "/info/");
+			fredNameRef.update( {isNew: true} );
 			fredNameRef =new Firebase("https://medxport.firebaseio.com/users/" + $scope.userData + "/form");
-			fredNameRef.set(values);
+			fredNameRef.set(data);
 		});
-
-
-
-
 	}
 ]);
