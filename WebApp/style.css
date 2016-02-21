@@ -110,7 +110,7 @@ h3 {
 }
 .leftPatient {
   display:inline-block;
-  width: calc(70% - 40px); 
+  width: calc(70% - 40px);
   /*background-color: #fafaed;*/
   overflow: hidden;
   position: relative;
@@ -182,7 +182,7 @@ hr {
   display: inline-block;
   float:right;
   margin: 0 auto;
-  visibility: hidden;
+  /*visibility: hidden;*/
 }
 .green {
   background-color: green;
