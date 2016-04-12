@@ -11,6 +11,7 @@ import Firebase
 
 class PatientTableViewController: UITableViewController {
 
+    var patient: Patient!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -20,7 +21,7 @@ class PatientTableViewController: UITableViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var birthDateLabel: UILabel!
     
-    var patient: Patient! {
+   /* var patient: Patient! {
         didSet {
             nameLabel.text = patient.first_name + " " + patient.last_name
             addressLabel.text = patient.address
@@ -31,7 +32,7 @@ class PatientTableViewController: UITableViewController {
             ageLabel.text = patient.age
             birthDateLabel.text = patient.dateOfBirth
         }
-    }
+    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
 
